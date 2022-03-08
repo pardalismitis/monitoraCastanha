@@ -2,6 +2,7 @@
 title: "Monitoramento Participativo da Biodiversidade"
 author: "Fernando Lima, D.Sc."
 output:
+  word_document: default
   html_document:
     df_print: paged
 ---
@@ -23,6 +24,8 @@ library(ggplot2)
         -   Alvo Complementar: Castanha da Amazônia
 
             -   Protocolo Avançado
+
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
 
 ```{r dataReading, include=FALSE}
 producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
