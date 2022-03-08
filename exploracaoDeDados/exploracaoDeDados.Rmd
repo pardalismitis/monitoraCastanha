@@ -1,32 +1,49 @@
 ---
-title: "Castanha"
+title: "Monitoramento Participativo da Biodiversidade"
 author: "Fernando Lima, D.Sc."
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r packages, include=FALSE}
 rm(list = ls(all = TRUE))
 #install.packages("here")
-#install.packages("dplyr")
+#install.packages("tidyverse")
 #install.packages("ggplot2")
 library(here)
-library(dplyr)
+library(tidyverse)
 library(ggplot2)
 ```
 
-```{r dataReading}
+-   Subprograma Terrestre
+
+    -   Componente Florestal
+
+        -   Alvo Complementar: Castanha da Amazônia
+
+            -   Protocolo Avançado
+
+```{r dataReading, include=FALSE}
 producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
 sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ```
 
-```{r limpeza}
+```{r limpeza, include=FALSE}
 producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",producaoCazumba$Castanhal)
 producaoCazumba$Castanhal <- gsub("Irmaos","Irmãos",producaoCazumba$Castanhal)
 
+sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",sementesCazumba$Castanhal)
+
+sementesCazumba$Castanhal <- gsub("Irmaos","Irmãos",sementesCazumba$Castanhal)
+
+#unique(sementesCazumba$Castanhal)
 #unique(producaoCazumba$n_frutos_ouricos_produzidos)
 ```
 
-```{r agregandoDados}
+```{r agregandoDados, include=FALSE}
+
+sementesCazumba$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesCazumba$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
 
 sementesSoma=group_by(sementesCazumba,Castanhal,Ano)
 
@@ -41,13 +58,14 @@ sementesAgregada = summarise(
         na.rm = TRUE
     ),
     peso_total = sum(
-        Peso_total_das_sementes_dos_10.frutos_ouricos_Kg,
+        Peso_total_das_sementes_dos_10.frutos_ouricos_gr,
         na.rm = TRUE
     ),
+    
     peso_semente=  peso_total/total_sementes
 )
 
-sementesAgregada=as.data.frame(sementesAgregada)
+
 
 producaoSoma = group_by(producaoCazumba, Castanhal,Ano )
 
@@ -59,29 +77,33 @@ producaoAgregada = summarise(
     )
 )
 
-producaoAgregada=as.data.frame(producaoAgregada)
-
 producaototal = 
   producaoAgregada$total_frutos*
   sementesAgregada$media_sementes*
   sementesAgregada$peso_semente
 
-producaototal=cbind.data.frame(producaototal,producaoAgregada$Castanhal,producaoAgregada$Ano)
+producaototal =
+  cbind.data.frame(
+    producaototal,
+    producaoAgregada$Castanhal,
+    producaoAgregada$Ano
+    )
+
+names(producaototal)[names(producaototal) ==
+                       "producaoAgregada$Castanhal"] <- "Castanhal"
+names(producaototal)[names(producaototal) ==
+                       "producaoAgregada$Ano"] <- "Ano"
 
 ```
 
-```{r exportando}
+```{r exportando, include=FALSE}
 sementesAgregada = as.data.frame(sementesAgregada)
 producaoAgregada = as.data.frame(producaoAgregada)
 write.csv(sementesAgregada, here("output", "sementesAgregadas.csv"))
 write.csv(producaoAgregada, here("output", "producaoAgregada.csv"))
 ```
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
-
-```{r plotSementes}
+```{r plotSementes, echo=FALSE}
 ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
@@ -110,8 +132,10 @@ ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
     )
 ```
 
-```{r plot}
-ggplot(producaototal, aes(x=factor(producaoAgregada$Ano), y=producaototal))+
+Média de sementes por ouriços nos castanhais monitorados
+
+```{r plotProducao, echo=FALSE}
+ggplot(producaototal, aes(x=factor(Ano), y=producaototal))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
@@ -130,7 +154,7 @@ ggplot(producaototal, aes(x=factor(producaoAgregada$Ano), y=producaototal))+
   
   theme_bw()+
   
-  facet_wrap(facets = vars(producaoAgregada$Castanhal))+
+  facet_wrap(facets = vars(Castanhal))+
   
   xlab("PRODUÇÃO ESTIMADA")+
   
@@ -147,8 +171,4 @@ ggplot(producaototal, aes(x=factor(producaoAgregada$Ano), y=producaototal))+
     )
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Produção anual estimada nos castanhais monitorados.
