@@ -5,8 +5,13 @@ output: html_notebook
 ---
 
 ```{r packages, include=FALSE}
+rm(list = ls(all = TRUE))
+#install.packages("here")
+#install.packages("dplyr")
+#install.packages("ggplot2")
 library(here)
 library(dplyr)
+library(ggplot2)
 ```
 
 ```{r dataReading}
@@ -15,10 +20,10 @@ sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ```
 
 ```{r limpeza}
-producaoCazumba$Castanhal <- gsub("Zirmão","Zirmao",producaoCazumba$Castanhal)
-producaoCazumba$Castanhal <- gsub("Irmãos","Irmaos",producaoCazumba$Castanhal)
+producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",producaoCazumba$Castanhal)
+producaoCazumba$Castanhal <- gsub("Irmaos","Irmãos",producaoCazumba$Castanhal)
 
-unique(producaoCazumba$n_frutos_ouricos_produzidos)
+#unique(producaoCazumba$n_frutos_ouricos_produzidos)
 ```
 
 ```{r agregandoDados}
@@ -42,6 +47,8 @@ sementesAgregada = summarise(
     peso_semente=  peso_total/total_sementes
 )
 
+sementesAgregada=as.data.frame(sementesAgregada)
+
 producaoSoma = group_by(producaoCazumba, Castanhal,Ano )
 
 producaoAgregada = summarise(
@@ -51,6 +58,16 @@ producaoAgregada = summarise(
         na.rm = TRUE
     )
 )
+
+producaoAgregada=as.data.frame(producaoAgregada)
+
+producaototal = 
+  producaoAgregada$total_frutos*
+  sementesAgregada$media_sementes*
+  sementesAgregada$peso_semente
+
+producaototal=cbind.data.frame(producaototal,producaoAgregada$Castanhal,producaoAgregada$Ano)
+
 ```
 
 ```{r exportando}
@@ -64,28 +81,73 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
 
-```{r}
-par(mar=c(7,5,5,5))
-barplot(
-    sementesAgregada$media_sementes[which(sementesAgregada$Ano=="2018")]~sementesAgregada$Castanhal[which(sementesAgregada$Ano=="2018")],
-    las=2,
-    col="blue",
-    xlab="",
-    ylab="Média de Sementes",
-    main = "Produção Média de sementes",
-    ylim=c(0,25)
-)
 
-barplot(
-    sementesAgregada$media_sementes[which(sementesAgregada$Ano=="2019")]~sementesAgregada$Castanhal[which(sementesAgregada$Ano=="2019")],
-    las=2,
-    add=T,
-    col="red")
-
-legend("topright", fill = c("darkblue", "red"), legend=c("2018", "2019"))
-
+```{r plotSementes}
+ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal))+
+  
+  xlab("CASTANHAL")+
+  
+  ylab("MÉDIA DE SEMENTES")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
 ```
 
+
+```{r plot}
+ggplot(producaototal, aes(x=factor(Producao_agregada$Ano), y=producaototal))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  
+  geom_text(
+    aes(label= as.integer(producaototal)),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,1800)+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Producao_agregada$Castanhal))+
+  
+  xlab("PRODUÇÃO ESTIMADA")+
+  
+  ylab("PRODUÇÃO TOTAL (Kg)")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+```
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
