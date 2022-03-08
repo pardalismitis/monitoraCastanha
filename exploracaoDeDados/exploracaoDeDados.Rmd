@@ -111,7 +111,7 @@ ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
 ```
 
 ```{r plot}
-ggplot(producaototal, aes(x=factor(Producao_agregada$Ano), y=producaototal))+
+ggplot(producaototal, aes(x=factor(producaoAgregada$Ano), y=producaototal))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
@@ -130,7 +130,7 @@ ggplot(producaototal, aes(x=factor(Producao_agregada$Ano), y=producaototal))+
   
   theme_bw()+
   
-  facet_wrap(facets = vars(Producao_agregada$Castanhal))+
+  facet_wrap(facets = vars(producaoAgregada$Castanhal))+
   
   xlab("PRODUÇÃO ESTIMADA")+
   
