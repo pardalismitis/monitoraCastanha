@@ -49,8 +49,6 @@ ggplot(
   ID, aes(x = UC))+
   geom_bar(stat = "count", fill = "blue")+
   labs(y = "NÚMERO DE CASTANHAIS AVALIADOS")
-    
-
 ```
 
 
