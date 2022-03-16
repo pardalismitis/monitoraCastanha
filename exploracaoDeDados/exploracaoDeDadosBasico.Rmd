@@ -35,12 +35,37 @@ Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no
 #producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
 #sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ID = read.csv(here("data", "id.csv"))
-totalColetado = read.csv(here("data", "formulario2aTotalColetado.csv"), na.strings = c("", "NA"))
+totalColetado = read.csv(here("data", "formulario2aTotalColetado.csv"), sep = ";",na.strings = c("", "NA"))
 manejo = read.csv(here("data", "formulario2bManejo.csv"), na.strings = c("", "NA"))
 governanca = read.csv(here("data", "formulario3Governanca.csv"), na.strings = c("", "NA"))
 custo = read.csv(here("data", "formulario4Custo.csv"), na.strings = c("", "NA"))
 comercializacao = read.csv(here("data", "formulario5Comercializacao.csv"), na.strings = c("", "NA"))
 ```
+
+LIMPEZA DE DADOS
+
+```{r limpeza, include=FALSE}
+AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ"
+RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
+
+for(i in 1:ncol(totalColetado)) {       
+  totalColetado[ , i] <- chartr(AccChars, RegChars, totalColetado[ , i])
+}
+
+limpezaDeCaracteres(totalColetado)
+
+totalColetado$Nome_Castanhal <- as.data.frame(chartr(AccChars, RegChars, totalColetado$Nome_Castanhal))
+
+totalColetado$UC <- gsub("a","á", totalColetado$UC)
+
+totalColetado$Nome_Castanhal <- gsub("7 Voltas","7_Voltas", totalColetado$Nome_Castanhal)
+totalColetado$Nome_Castanhal <- gsub("L - 62","L-62", totalColetado$Nome_Castanhal)
+#totalColetado$Nome_Castanhal <- gsub("Igarapé","Igarape", totalColetado$Nome_Castanhal)
+totalColetado$Nome_Castanhal <- gsub("e","é", totalColetado$Nome_Castanhal)
+#unique(sementesCazumba$Castanhal)
+#unique(producaoCazumba$n_frutos_ouricos_produzidos)
+```
+
 
 CARACTERÍSTICAS - FORMULÁRIO 1A
 

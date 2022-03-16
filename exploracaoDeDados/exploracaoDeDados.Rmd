@@ -37,7 +37,6 @@ producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",producaoCazumba$Castanhal)
 producaoCazumba$Castanhal <- gsub("Irmaos","Irmãos",producaoCazumba$Castanhal)
 
 sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",sementesCazumba$Castanhal)
-
 sementesCazumba$Castanhal <- gsub("Irmaos","Irmãos",sementesCazumba$Castanhal)
 
 #unique(sementesCazumba$Castanhal)
