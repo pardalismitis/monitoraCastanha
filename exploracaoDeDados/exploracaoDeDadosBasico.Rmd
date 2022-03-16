@@ -16,9 +16,9 @@ rm(list = ls(all = TRUE))
 #install.packages("here")
 #install.packages("tidyverse")
 #install.packages("ggplot2")
-#library(here)
+library(here)
 #library(tidyverse)
-#library(ggplot2)
+library(ggplot2)
 ```
 
 -   Subprograma Terrestre
@@ -35,18 +35,31 @@ Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no
 #producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
 #sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ID = read.csv(here("data", "id.csv"))
+totalColetado = read.csv(here("data", "formulario2aTotalColetado.csv"), na.strings = c("", "NA"))
+manejo = read.csv(here("data", "formulario2bManejo.csv"), na.strings = c("", "NA"))
+governanca = read.csv(here("data", "formulario3Governanca.csv"), na.strings = c("", "NA"))
+custo = read.csv(here("data", "formulario4Custo.csv"), na.strings = c("", "NA"))
+comercializacao = read.csv(here("data", "formulario5Comercializacao.csv"), na.strings = c("", "NA"))
+```
 
-ID = read.csv("id.csv")
-TC=read.csv("total_coletado_2A.csv", na.strings = c("", "NA"))
-Manejo = read.csv("manejo_2B.csv", na.strings = c("", "NA"))
-Governanca=read.csv("governanca_3.csv", na.strings = c("", "NA"))
-Custo=read.csv("custo_4.csv", na.strings = c("", "NA"))
-Comerci=read.csv("comercializacao_5.csv", na.strings = c("", "NA"))
+CARACTERÍSTICAS - FORMULÁRIO 1A
+
+```{r numeroDeCastanhais}
+ggplot(
+  ID, aes(x = UC))+
+  geom_bar(stat = "count", fill = "blue")+
+  labs(y = "NÚMERO DE CASTANHAIS AVALIADOS")
+    
 
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+PORCENTAGEM DE CASTANHAIS COLETADOS
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+NADA A VER COM NADA:
+
+counts=table(ID$UC)
+counts=prop.table(counts,1)*100
+barplot(counts, cex.lab=1.5, cex.main=1.5,main="Proporção de Castanhais coletados",
+        xlab="Unidades de Conservação", col=c("Black"),
+        legend = c("Coletados"), ylab="Porcentagem", ylim = c(0,100))
