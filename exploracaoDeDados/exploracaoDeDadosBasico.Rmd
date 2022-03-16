@@ -1,0 +1,52 @@
+---
+title: "Monitoramento Participativo da Biodiversidade"
+author: "Fernando Lima, D.Sc."
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r packages, include=FALSE}
+rm(list = ls(all = TRUE))
+#install.packages("here")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+#library(here)
+#library(tidyverse)
+#library(ggplot2)
+```
+
+-   Subprograma Terrestre
+
+    -   Componente Florestal
+
+        -   Alvo Complementar: Castanha da Amazônia
+
+            -   Protocolo Básico
+
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
+
+```{r dataReading, include=FALSE}
+#producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
+#sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
+ID = read.csv(here("data", "id.csv"))
+
+ID = read.csv("id.csv")
+TC=read.csv("total_coletado_2A.csv", na.strings = c("", "NA"))
+Manejo = read.csv("manejo_2B.csv", na.strings = c("", "NA"))
+Governanca=read.csv("governanca_3.csv", na.strings = c("", "NA"))
+Custo=read.csv("custo_4.csv", na.strings = c("", "NA"))
+Comerci=read.csv("comercializacao_5.csv", na.strings = c("", "NA"))
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
