@@ -9,7 +9,7 @@ output:
 
 ```{r packages, include=FALSE}
 rm(list = ls(all = TRUE))
-#install.packages("here")
+#install.packages("here") 
 #install.packages("tidyverse")
 #install.packages("ggplot2")
 library(here)
@@ -33,11 +33,14 @@ sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ```
 
 ```{r limpeza, include=FALSE}
-producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",producaoCazumba$Castanhal)
-producaoCazumba$Castanhal <- gsub("Irmaos","Irmãos",producaoCazumba$Castanhal)
+producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",
+                             gsub("Irmaos","Irmãos",     
+                                  producaoCazumba$Castanhal))
 
-sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",sementesCazumba$Castanhal)
-sementesCazumba$Castanhal <- gsub("Irmaos","Irmãos",sementesCazumba$Castanhal)
+
+sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",
+                             gsub("Irmaos","Irmãos",
+                                  sementesCazumba$Castanhal))
 
 #unique(sementesCazumba$Castanhal)
 #unique(producaoCazumba$n_frutos_ouricos_produzidos)
