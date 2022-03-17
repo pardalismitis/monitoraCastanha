@@ -34,34 +34,58 @@ Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no
 ```{r dataReading, include=FALSE}
 #producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
 #sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
-ID = read.csv(here("data", "id.csv"))
-totalColetado = read.csv(here("data", "formulario2aTotalColetado.csv"), sep = ";",na.strings = c("", "NA"))
-manejo = read.csv(here("data", "formulario2bManejo.csv"), na.strings = c("", "NA"))
-governanca = read.csv(here("data", "formulario3Governanca.csv"), na.strings = c("", "NA"))
-custo = read.csv(here("data", "formulario4Custo.csv"), na.strings = c("", "NA"))
-comercializacao = read.csv(here("data", "formulario5Comercializacao.csv"), na.strings = c("", "NA"))
+ID = 
+  read.csv(here("data", "id.csv")
+           )
+
+totalColetado = 
+  read.csv(here("data", "formulario2aTotalColetado.csv"),
+           sep = ";",
+           na.strings = c("", "NA")
+           #fileEncoding = "UTF-8"
+           )
+
+manejo = 
+  read.csv(here("data", "formulario2bManejo.csv"),
+           na.strings = c("", "NA")
+           #fileEncoding = "UTF-8"
+           )
+
+governanca = 
+  read.csv(here("data", "formulario3Governanca.csv"),
+           na.strings = c("", "NA")
+#           fileEncoding = "UTF-8"
+           )
+
+custo = 
+  read.csv(here("data", "formulario4Custo.csv"),
+           na.strings = c("", "NA")
+           #fileEncoding = "UTF-8"
+           )
+
+comercializacao = 
+  read.csv(here("data", "formulario5Comercializacao.csv"),
+           na.strings = c("", "NA")
+           #fileEncoding = "UTF-8"
+           )
 ```
 
 LIMPEZA DE DADOS
 
 ```{r limpeza, include=FALSE}
-AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ"
-RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
+AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ "
+RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy_"
 
 for(i in 1:ncol(totalColetado)) {       
   totalColetado[ , i] <- chartr(AccChars, RegChars, totalColetado[ , i])
 }
 
-limpezaDeCaracteres(totalColetado)
+totalColetado$Nome_Castanhal <- gsub("7 Voltas","7_Voltas",
+                                gsub("L - 62","L-62",
+                                gsub("2_irm‹os","2_irmaos",
+                                gsub("Araœjo","Araujo",
+                                     totalColetado$Nome_Castanhal))))
 
-totalColetado$Nome_Castanhal <- as.data.frame(chartr(AccChars, RegChars, totalColetado$Nome_Castanhal))
-
-totalColetado$UC <- gsub("a","á", totalColetado$UC)
-
-totalColetado$Nome_Castanhal <- gsub("7 Voltas","7_Voltas", totalColetado$Nome_Castanhal)
-totalColetado$Nome_Castanhal <- gsub("L - 62","L-62", totalColetado$Nome_Castanhal)
-#totalColetado$Nome_Castanhal <- gsub("Igarapé","Igarape", totalColetado$Nome_Castanhal)
-totalColetado$Nome_Castanhal <- gsub("e","é", totalColetado$Nome_Castanhal)
 #unique(sementesCazumba$Castanhal)
 #unique(producaoCazumba$n_frutos_ouricos_produzidos)
 ```
