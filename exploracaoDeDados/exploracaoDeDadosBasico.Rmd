@@ -4,7 +4,7 @@ author: "Fernando Lima, D.Sc."
 output:
   word_document: default
   html_document:
-    df_print: paged
+    df_print: paged 
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
