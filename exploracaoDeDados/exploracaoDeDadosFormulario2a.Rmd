@@ -14,6 +14,7 @@ rm(list = ls(all = TRUE))
 #install.packages("ggplot2")
 #install.packages("vctrs")
 #library(tidyverse)
+library(xlsx)
 library(ggplot2)
 library(here)
 library(vctrs)
@@ -91,6 +92,14 @@ for(i in 1:nrow(totalColetado)){
   }
 }
 ```
+
+Exportação de dados
+
+```{r exportaForm2a}
+write.xlsx(totalColetado, here("output", "formulario2a.xlsx"), sheetName = "formulario2a", col.names = TRUE, row.names = TRUE, append = FALSE)
+```
+
+
 \newpage
 ## DEMOGRAFIA NAS SAFRAS - FORMULÁRIO 2A
 
