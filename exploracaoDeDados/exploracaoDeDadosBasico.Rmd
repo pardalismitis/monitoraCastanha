@@ -114,6 +114,10 @@ counts=table(ID\$UC) counts=prop.table(counts,1)\*100 barplot(counts, cex.lab=1.
 
 ### NÚMERO MÉDIO DE PESSOAS POR CASTANHAL EM CADA UNIDADE DE CONSERVAÇÃO
 ```{r}
+defaultW <- getOption("warn")
+options(warn = -1)
+#options(warn = defaultW)
+
 ggplot(
   totalColetado, aes(
     #fill = UC,
