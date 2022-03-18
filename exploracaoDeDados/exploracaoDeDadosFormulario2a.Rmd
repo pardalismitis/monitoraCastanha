@@ -7,10 +7,6 @@ output:
     df_print: paged 
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
-
 ```{r packages, include=FALSE}
 rm(list = ls(all = TRUE))
 #install.packages("here")
@@ -23,6 +19,8 @@ library(here)
 library(vctrs)
 ```
 
+# CASTANHA DA AMAZÔNIA - FORMULÁRIO 2A
+
 -   Subprograma Terrestre
 
     -   Componente Florestal
@@ -31,77 +29,57 @@ library(vctrs)
 
             -   Protocolo Básico
 
-Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitoraCastanha>
 
 ```{r dataReading, include=FALSE}
-#ID = 
-  #read.csv(here("data", "id.csv"),
-   #        encoding = "UTF-8"
-    #       )
-
 totalColetado = 
   read.csv(here("data", "formulario2a.csv"),
            sep = ";",
            na.strings = c("", "NA"),
            encoding = "UTF-8"
            )
-
-manejo = 
-  read.csv(here("data", "formulario2bManejo.csv"),
-           na.strings = c("", "NA"),
-           encoding = "UTF-8"
-           )
-
-governanca = 
-  read.csv(here("data", "formulario3Governanca.csv"),
-           na.strings = c("", "NA"),
-           encoding = "UTF-8"
-           )
-
-custo = 
-  read.csv(here("data", "formulario4Custo.csv"),
-           na.strings = c("", "NA"),
-           encoding = "UTF-8"
-           )
-
-comercializacao = 
-  read.csv(here("data", "formulario5Comercializacao.csv"),
-           na.strings = c("", "NA"),
-           encoding = "UTF-8"
-           )
 ```
 
-LIMPEZA DE DADOS
+\newpage
 
-```{r limpeza, include=FALSE}
+## LIMPEZA DE DADOS
+
+-   Limpeza de caracteres diacriticos e colocar tudo em minúsculas.
+
+-   Padronização dos nomes das UCs
+
+-   Conversão de campos numéricos
+
+-   Cálculo de peso total
+
+    | UNIDADE | LATA | KG  |
+    |---------|------|-----|
+    | LATA    | 1    | 12  |
+    | SACA    | 4    | 48  |
+    | BARRICA | 6    | 72  |
+
+    : Unidades de medidas para cálculo de produção
+
+```{r limpeza}
 AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ "
 RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy_"
-
-#Limpar caracteres diacriticos e colocar tudo em minúsculas.
 
 for(i in 1:ncol(totalColetado)) {       
   totalColetado[ , i] <- chartr(AccChars, RegChars, totalColetado[ , i])
   totalColetado[ , i] <- tolower(totalColetado[ , i])
 }
 
-#Corrigindo nomes das UCs
 
 totalColetado$UC <- gsub("cautario","Rio Cautário",
                                 gsub("lago_cunia","Lago do Cuniã",
                                 gsub("ouro_preto","Rio Ouro Preto",
                                 gsub("cazumba","Cazumbá-Iracema",
-  #                              gsub("2_irm‹os","2_irmaos",
-   #                             gsub("Araœjo","Araujo",
                                      totalColetado$UC))))
-
-# Convertendo campos numéricos
 
 totalColetado$Q_castanha <- as.integer(totalColetado$Q_castanha)
 totalColetado$KG_TOTAL <- as.integer(totalColetado$KG_TOTAL)
 totalColetado$N_familias <- as.integer(totalColetado$N_familias)
 totalColetado$N_pessoas <- as.integer(totalColetado$N_pessoas)
-
-# Calculando peso total
 
 for(i in 1:nrow(totalColetado)){
   if (totalColetado$Unidade[i] == "barricas") {
@@ -113,26 +91,12 @@ for(i in 1:nrow(totalColetado)){
   }
 }
 ```
-
-CARACTERÍSTICAS - FORMULÁRIO 1A
-
-```{r numeroDeCastanhais}
-ggplot(
-  ID, aes(x = UC))+
-  geom_bar(stat = "count", fill = "blue")+
-  labs(y = "NÚMERO DE CASTANHAIS AVALIADOS")
-```
-
-PORCENTAGEM DE CASTANHAIS COLETADOS
-
-NADA A VER COM NADA:
-
-counts=table(ID\$UC) counts=prop.table(counts,1)\*100 barplot(counts, cex.lab=1.5, cex.main=1.5,main="Proporção de Castanhais coletados", xlab="Unidades de Conservação", col=c("Black"), legend = c("Coletados"), ylab="Porcentagem", ylim = c(0,100))
-
+\newpage
 ## DEMOGRAFIA NAS SAFRAS - FORMULÁRIO 2A
 
 ### NÚMERO MÉDIO DE PESSOAS POR CASTANHAL EM CADA UNIDADE DE CONSERVAÇÃO
-```{r}
+
+```{r pessoasPorCastanhal}
 defaultW <- getOption("warn")
 options(warn = -1)
 #options(warn = defaultW)
@@ -145,16 +109,13 @@ ggplot(
   )+
   geom_bar(stat = "identity", fill = "blue")+
   
-  
-  #geom_text(aes(label = N_pessoas), vjust = 1.6, color = "white")
-  #theme_minimal()
-  #facet_wrap(~UC) +
   labs(y = "NÚMERO DE PESSOAS", x = "RESEX")
 ```
 
+\newpage
 ### TOTAL COLETADO EM CADA UNIDADE DE CONSERVAÇÃO
 
-```{r}
+```{r coletaPorUC}
 
 ggplot(
   totalColetado, aes(
