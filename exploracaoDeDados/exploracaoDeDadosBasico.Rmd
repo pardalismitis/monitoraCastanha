@@ -77,22 +77,41 @@ LIMPEZA DE DADOS
 AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ "
 RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy_"
 
+#Limpar caracteres diacriticos e colocar tudo em minúsculas.
+
 for(i in 1:ncol(totalColetado)) {       
   totalColetado[ , i] <- chartr(AccChars, RegChars, totalColetado[ , i])
   totalColetado[ , i] <- tolower(totalColetado[ , i])
-  for(i in 1:ncol(ID)) {       
-  ID[ , i] <- chartr(AccChars, RegChars, ID[ , i])
-  ID[ , i] <- tolower(ID[ , i])
-}
 }
 
-totalColetado$UC <- gsub("cautario","Cautário",
-                                gsub("lago_cunia","Lago Cunião",
+#Corrigindo nomes das UCs
+
+totalColetado$UC <- gsub("cautario","Rio Cautário",
+                                gsub("lago_cunia","Lago do Cuniã",
+                                gsub("ouro_preto","Rio Ouro Preto",
+                                gsub("cazumba","Cazumbá-Iracema",
   #                              gsub("2_irm‹os","2_irmaos",
    #                             gsub("Araœjo","Araujo",
-                                     totalColetado$UC))
+                                     totalColetado$UC))))
 
+# Convertendo campos numéricos
 
+totalColetado$Q_castanha <- as.integer(totalColetado$Q_castanha)
+totalColetado$KG_TOTAL <- as.integer(totalColetado$KG_TOTAL)
+totalColetado$N_familias <- as.integer(totalColetado$N_familias)
+totalColetado$N_pessoas <- as.integer(totalColetado$N_pessoas)
+
+# Calculando peso total
+
+for(i in 1:nrow(totalColetado)){
+  if (totalColetado$Unidade[i] == "barricas") {
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*72
+  } else if (totalColetado$Unidade[i]== "latas"){
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*12
+  } else {
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*48
+  }
+}
 ```
 
 CARACTERÍSTICAS - FORMULÁRIO 1A
@@ -121,20 +140,31 @@ options(warn = -1)
 ggplot(
   totalColetado, aes(
     #fill = UC,
-    y = as.integer(N_pessoas),
+    y = N_pessoas,
+    x = UC)
+  )+
+  geom_bar(stat = "identity", fill = "blue")+
+  
+  
+  #geom_text(aes(label = N_pessoas), vjust = 1.6, color = "white")
+  #theme_minimal()
+  #facet_wrap(~UC) +
+  labs(y = "NÚMERO DE PESSOAS", x = "RESEX")
+```
+
+### TOTAL COLETADO EM CADA UNIDADE DE CONSERVAÇÃO
+
+```{r}
+
+ggplot(
+  totalColetado, aes(
+    #fill = UC,
+    y = KG_TOTAL,
     x = UC)
   )+
   geom_bar(stat = "identity", fill = "blue")+
   #facet_wrap(~UC) +
-  labs(y = "NÚMERO DE PESSOAS")
-```
-
-### VARIAÇÃO DO TOTAL COLETADO EM CADA UC
-
-par(mfrow=c(1, 1)) par(mar=c(5,5,5,5)) plot(TC$KG_TOTAL~ID$UC,cex.lab=1.5, ylim=c(0,7000),ylab = "Quantidade de Castanha (KG)", xlab = "Unidade de Conservação") par(mar=c(5,5,5,5)) barplot(TC$KG_TOTAL~ID$ID,cex.lab=1.5, ylim=c(0,7000),ylab="Quantidade coletada em cada castanhal", xlab="Castanhais") text(4,6800, "Cautario") text(18,6800, "Rio Ouro") text(18,6000, "Preto") text(28,6800, "Cuinã") text(41,6800, "Cazumbá") abline(v=12.4) abline(v=23.8) abline(v=34.8)
-
-```{r}
-
+  labs(y = "QUANTIDADE DE CASTANHA (KG)", x = "RESEX")
 ```
 
 
