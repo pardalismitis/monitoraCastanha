@@ -14,9 +14,9 @@ rm(list = ls(all = TRUE))
 #install.packages("ggplot2")
 #install.packages("vctrs")
 #library(tidyverse)
-install.packages("xlsx")
+#install.packages("xlsx")
 library(xlsx)
-#library(ggplot2)
+library(ggplot2)
 library(here)
 #library(vctrs)
 ```
@@ -80,34 +80,37 @@ mapeamento$X.U.FEFF.UC <- gsub("rio_cautario","Rio Cautário",
 
 mapeamento$cap <- as.integer(mapeamento$cap)
 mapeamento$cap[is.na(mapeamento$cap)] <- 0
+mapeamento$producaoMediaEmLatas <- as.integer(mapeamento$producaoMediaEmLatas)
 #totalColetado$KG_TOTAL <- as.integer(totalColetado$KG_TOTAL)
 #totalColetado$N_familias <- as.integer(totalColetado$N_familias)
 #totalColetado$N_pessoas <- as.integer(totalColetado$N_pessoas)
 
-
+mapeamento$dap <- mapeamento$cap/pi
 
 for(i in 1:nrow(mapeamento)){
-  if (mapeamento$cap[i] ==0) {
+  if (mapeamento$dap[i] == 0) {
     tamanho <- ""
-  } else if (mapeamento$cap[i] <= 50){
+  } else if (mapeamento$dap[i] <= 50){
     tamanho <- "jovem"
-  } else if (mapeamento$cap[i] > 50 & mapeamento$cap[i] <= 100){
+  } else if (mapeamento$dap[i] > 50 & mapeamento$dap[i] <= 100){
     tamanho <- "jovem-adulto"
-  } else if (mapeamento$cap[i] > 100 & mapeamento$cap[i] <= 150){
+  } else if (mapeamento$dap[i] > 100 & mapeamento$dap[i] <= 150){
     tamanho <- "adulto"
-  } else if (mapeamento$cap[i] > 150 & mapeamento$cap[i] <= 200){
+  } else if (mapeamento$dap[i] > 150 & mapeamento$dap[i] <= 200){
     tamanho <- "adulto-senescente"
   } else {
     tamanho <- "senescente"
   }
   mapeamento$tamanho[i] <- tamanho
 }
+
+colnames(mapeamento)[colnames(mapeamento) == "X.U.FEFF.UC"] <- "UC"
 ```
 
 Exportação de dados
 
 ```{r exportaForm2a}
-write.xlsx(mapeamento, here("output", "formulario6Mapeamento.xlsx"), sheetName = "formulario6Mapeamento", col.names = TRUE, row.names = TRUE, append = FALSE)
+write.csv(mapeamento, here("output", "formulario6Mapeamento.csv"))
 ```
 
 
@@ -121,15 +124,17 @@ write.xlsx(mapeamento, here("output", "formulario6Mapeamento.xlsx"), sheetName =
 #options(warn = -1)
 #options(warn = defaultW)
 
+mapeamento$tamanho <- factor(mapeamento$tamanho,levels = c("", "jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+
 ggplot(
   mapeamento, aes(
     #fill = UC,
-    y = N_pessoas,
-    x = UC)
+    y = producaoMediaEmLatas,
+    x = tamanho)
   )+
   geom_bar(stat = "identity", fill = "blue")+
   
-  labs(y = "NÚMERO DE PESSOAS", x = "RESEX")
+  labs(y = "PRODUÇÃO MÉDIA", x = "RESEX")
 ```
 
 \newpage
