@@ -14,7 +14,7 @@ rm(list = ls(all = TRUE))
 #install.packages("ggplot2")
 #install.packages("gapminder")
 library(here)
-library(tidyverse)
+#library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(gapminder)
@@ -36,23 +36,49 @@ sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
 ```
 
 ```{r}
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Coletivo",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Davi",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",NA,NA,NA,"Cazumba",2018,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gama",NA,NA,NA,"Cazumba",2018,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gama",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Mariazinha",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizam",NA,NA,NA,"Cazumba",2018,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizam",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",NA,NA,NA,"Cazumba",2018,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão",NA,NA,NA,"Cazumba",2021,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",NA,NA,NA,"Cazumba",2018,NA)
-sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",NA,NA,NA,"Cazumba",2021,NA)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Coletivo",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Davi",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Mariazinha",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2021)
 
 sementesCazumba[,c(2:5,7)] <- suppressWarnings(as.integer(unlist(sementesCazumba[,c(2:5,7)])))
 
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+
+producaoCazumba[,c(2:5,7)] <- suppressWarnings(as.integer(unlist(producaoCazumba[,c(2:5,7)])))
 ```
 
 
@@ -141,6 +167,13 @@ ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
     size =0.3,
     fill = "blue"
     )+
+  geom_text(
+    aes(label= as.integer(round(media_sementes, 0))),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,30)+
   
   theme_bw()+
   
@@ -148,7 +181,7 @@ ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
   
   xlab("CASTANHAL")+
   
-  ylab("MÉDIA DE SEMENTES")+
+  ylab("MÉDIA DE SEMENTES POR OURIÇO")+
   
   theme(legend.position="top")+
   
