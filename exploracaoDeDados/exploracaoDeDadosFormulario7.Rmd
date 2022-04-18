@@ -1,0 +1,236 @@
+---
+title: "Monitoramento Participativo da Biodiversidade"
+author: "Fernando Lima, D.Sc."
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r packages, include=FALSE}
+rm(list = ls(all = TRUE))
+#install.packages("here") 
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+#install.packages("gapminder")
+library(here)
+#library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(gapminder)
+```
+
+-   Subprograma Terrestre
+
+    -   Componente Florestal
+
+        -   Alvo Complementar: Castanha da Amazônia
+
+            -   Protocolo Avançado
+
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
+
+```{r dataReading, include=FALSE}
+producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
+sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
+```
+
+```{r}
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Coletivo",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Davi",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Mariazinha",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+sementesCazumba[nrow(sementesCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2021)
+
+sementesCazumba[,c(2:5,7)] <- suppressWarnings(as.integer(unlist(sementesCazumba[,c(2:5,7)])))
+
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Dimar",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Irmãos Gamas",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Marizan",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Zequinha",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+producaoCazumba[nrow(producaoCazumba)+1,] <- c("Zirmão 2",
+                                               NA,NA,NA,NA,"Cazumba",2018)
+
+producaoCazumba[,c(2:5,7)] <- suppressWarnings(as.integer(unlist(producaoCazumba[,c(2:5,7)])))
+```
+
+
+```{r limpeza, include=FALSE}
+producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",
+                             gsub("Irmaos","Irmãos",     
+                                  producaoCazumba$Castanhal))
+
+
+sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",
+                             gsub("Irmaos","Irmãos",
+                                  sementesCazumba$Castanhal))
+
+#unique(sementesCazumba$Castanhal)
+#unique(producaoCazumba$n_frutos_ouricos_produzidos)
+```
+
+```{r agregandoDados, include=FALSE}
+
+sementesCazumba$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesCazumba$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
+
+sementesSoma = group_by(sementesCazumba,Castanhal,Ano)
+
+sementesAgregada = summarise(
+    sementesSoma,
+    total_sementes = sum(
+        n_de_sementes_por_fruto_ourico,
+        na.rm = TRUE
+    ),
+    media_sementes = mean(
+        n_de_sementes_por_fruto_ourico,
+        na.rm = TRUE
+    ),
+    peso_total = sum(
+        Peso_total_das_sementes_dos_10.frutos_ouricos_gr,
+        na.rm = TRUE
+    ),
+    
+    peso_semente=  peso_total/total_sementes
+)
+
+
+
+producaoSoma = group_by(producaoCazumba, Castanhal,Ano )
+
+producaoAgregada = summarise(
+    producaoSoma,
+    total_frutos = sum(
+        n_frutos_ouricos_produzidos,
+        na.rm = TRUE
+    )
+)
+
+producaototal = 
+  producaoAgregada$total_frutos*
+  sementesAgregada$media_sementes*
+  sementesAgregada$peso_semente
+
+producaototal =
+  cbind.data.frame(
+    producaototal,
+    producaoAgregada$Castanhal,
+    producaoAgregada$Ano
+    )
+
+names(producaototal)[names(producaototal) ==
+                       "producaoAgregada$Castanhal"] <- "Castanhal"
+names(producaototal)[names(producaototal) ==
+                       "producaoAgregada$Ano"] <- "Ano"
+
+```
+
+```{r exportando, include=FALSE}
+sementesAgregada = as.data.frame(sementesAgregada)
+producaoAgregada = as.data.frame(producaoAgregada)
+write.csv(sementesAgregada, here("output", "sementesAgregadas.csv"))
+write.csv(producaoAgregada, here("output", "producaoAgregada.csv"))
+```
+
+```{r plotSementes, echo=FALSE}
+ggplot(sementesAgregada, aes(x=factor(Ano), y=media_sementes))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  geom_text(
+    aes(label= as.integer(round(media_sementes, 0))),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,30)+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal))+
+  
+  xlab("CASTANHAL")+
+  
+  ylab("MÉDIA DE SEMENTES POR OURIÇO")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+```
+
+Média de sementes por ouriços nos castanhais monitorados
+
+```{r plotProducao, echo=FALSE}
+ggplot(producaototal, aes(x=factor(Ano), y=producaototal))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  
+  geom_text(
+    aes(label= as.integer(producaototal)),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,1800)+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal))+
+  
+  xlab("PRODUÇÃO ESTIMADA")+
+  
+  ylab("PRODUÇÃO TOTAL (Kg)")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+```
+
+Produção anual estimada nos castanhais monitorados.
