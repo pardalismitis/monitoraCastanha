@@ -1,0 +1,75 @@
+---
+title: "Monitoramento Participativo da Biodiversidade"
+author: "Fernando Lima, D.Sc."
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r packages, include=FALSE}
+rm(list = ls(all = TRUE))
+library(here)
+library(dplyr)
+```
+
+-   Subprograma Terrestre
+
+    -   Componente Florestal
+
+        -   Alvo Complementar: Castanha da Amazônia
+
+            -   Protocolo Avançado
+
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
+
+```{r dataReading, include=FALSE}
+producaoCazumba = read.csv(here("data", "producao.csv"), sep = ";")
+sementesCazumba = read.csv(here("data", "sementes.csv"), sep = ";")
+mapeamento      = read.csv(here("output", "formulario6Mapeamento.csv"))
+
+names(mapeamento)[names(mapeamento) ==
+                       "nomePonto"] <- "n_da_castanheira"
+
+names(sementesCazumba)[names(sementesCazumba) ==
+                       "n_arvore"] <- "n_da_castanheira"
+
+```
+
+```{r}
+producaoClasse <- merge(producaoCazumba, mapeamento, by = "n_da_castanheira")
+sementesClasse <- merge(sementesCazumba, mapeamento, by = "n_da_castanheira")
+```
+
+
+```{r}
+sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
+```
+
+```{r}
+sementesClasseSoma = group_by(sementesClasse, tamanho)
+
+sementesClasseAgregada = summarise(
+    sementesClasseSoma,
+    total_sementes = sum(
+        n_de_sementes_por_fruto_ourico,
+        na.rm = TRUE
+    ),
+    media_sementes = mean(
+        n_de_sementes_por_fruto_ourico,
+        na.rm = TRUE
+    ),
+    peso_total = sum(
+        Peso_total_das_sementes_dos_10.frutos_ouricos_gr,
+        na.rm = TRUE
+    ),
+    
+    peso_semente=  peso_total/total_sementes
+)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
