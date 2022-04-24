@@ -33,21 +33,23 @@ names(mapeamento)[names(mapeamento) ==
 
 names(sementesCazumba)[names(sementesCazumba) ==
                        "n_arvore"] <- "n_da_castanheira"
-
 ```
 
+Unir dados de produção e sementes com dados de mapeamento.
 ```{r}
 producaoClasse <- merge(producaoCazumba, mapeamento, by = "n_da_castanheira")
 sementesClasse <- merge(sementesCazumba, mapeamento, by = "n_da_castanheira")
 ```
 
-
+Converter quilos para gramas.
 ```{r}
 sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
 ```
 
+
+
 ```{r}
-sementesClasseSoma = group_by(sementesClasse, tamanho)
+sementesClasseSoma = group_by(sementesClasse, tamanho, Castanhal, Ano)
 
 sementesClasseAgregada = summarise(
     sementesClasseSoma,
@@ -64,7 +66,19 @@ sementesClasseAgregada = summarise(
         na.rm = TRUE
     ),
     
-    peso_semente=  peso_total/total_sementes
+    peso_semente =  peso_total/total_sementes
+)
+```
+
+```{r}
+producaoClasseSoma = group_by(producaoClasse, Castanhal, tamanho, Ano )
+
+producaoClasseAgregada = summarise(
+    producaoClasseSoma,
+    total_frutos = sum(
+        n_frutos_ouricos_produzidos,
+        na.rm = TRUE
+    )
 )
 ```
 
