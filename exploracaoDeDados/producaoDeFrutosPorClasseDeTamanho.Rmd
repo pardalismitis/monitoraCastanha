@@ -3,6 +3,7 @@ title: "Monitoramento Participativo da Biodiversidade"
 author: "Fernando Lima, D.Sc."
 output:
   word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -73,6 +74,8 @@ Converter quilos para gramas.
 sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
 ```
 
+\newpage
+
 ### Cálculo para sementes:
 
 -   Número de sementes por fruto
@@ -108,6 +111,8 @@ sementesClasseAgregada$id <- paste(sementesClasseAgregada$Castanhal,
                                    sementesClasseAgregada$tamanho,
                                    sementesClasseAgregada$Ano)
 ```
+
+\newpage
 
 ### Cálculo para produção:
 
@@ -153,6 +158,8 @@ producaototal = as.data.frame(producaototal)
 write.csv(producaototal, here("output", "producaoTotal.csv"))
 ```
 
+\newpage
+
 ### Cálculo de produção por castanhal e por classe de tamanho
 
 ```{r}
@@ -194,6 +201,8 @@ write.csv(producaoCastanhalAgregada, here("output", "producaoCastanhalAgregada.c
 write.csv(producaoTamanhoAgregada, here("output", "producaoTamanhoAgregada.csv"))
 ```
 
+\newpage
+
 ### Gráfico de Produção x Ano x Castanhal
 
 ```{r}
@@ -233,6 +242,8 @@ ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
     )
 ```
 
+\newpage
+
 ### Gráfico de Produção x Classe de Tamanho x Castanhal
 
 ```{r}
@@ -267,6 +278,8 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
     )
 ```
 
+\newpage
+
 ### Gráfico Número de Castanheiras x Classe de tamanho
 
 Selecionando um conjunto de dados (Ano de 2019) como referência para não somar as classes de todos os anos.
@@ -285,7 +298,6 @@ producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
 ```{r}
 write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
 ```
-
 
 ```{r}
 #ordenar as classes de tamanho em ordem crescente
