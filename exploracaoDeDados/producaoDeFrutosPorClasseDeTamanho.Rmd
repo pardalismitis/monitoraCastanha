@@ -3,6 +3,7 @@ title: "Monitoramento Participativo da Biodiversidade"
 author: "Fernando Lima, D.Sc."
 output:
   word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -20,44 +21,46 @@ library(ggplot2)
 
         -   Alvo Complementar: Castanha da Amazônia
 
-            -   Protocolo Avançado
-
 Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitora-mpb>
 
+### Leitura de dados
+
+-   Produção
+
+-   Sementes
+
+-   Mapeamento
+
 ```{r dataReading, include=FALSE}
+#leitura
 producaoCazumba = read.csv(here("data", "producaoCazumbaCompleta.csv"))
 sementesCazumba = read.csv(here("data", "sementesCazumbaCompleta.csv"))
 mapeamento      = read.csv(here("output", "formulario6Mapeamento.csv"))
-
+#ajustes nos nomes de castanhais
 producaoCazumba$Castanhal <- gsub("Zirmao","Zirmão",
                              gsub("Irmaos","Irmãos",     
                                   producaoCazumba$Castanhal))
-
 sementesCazumba$Castanhal <- gsub("Zirmao","Zirmão",
                              gsub("Irmaos","Irmãos",
                                   sementesCazumba$Castanhal))
-
-
+#padronização de nome
 names(mapeamento)[names(mapeamento) ==
                        "nomePonto"] <- "n_da_castanheira"
-
 names(sementesCazumba)[names(sementesCazumba) ==
                        "n_arvore"] <- "n_da_castanheira"
 ```
 
-Unir dados de produção e sementes com dados de mapeamento.
-<<<<<<< HEAD
+Unir dados de produção e sementes com dados de mapeamento usando o número das castanheiras como referência.
 
-=======
->>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
+`all.x` define que todos os dados de `producaoCazumba` serão mantidos.
+
 ```{r}
+#unir com mapeamento para adicionar as classes de tamanho.
 producaoClasse <- merge(producaoCazumba,
                         mapeamento,
                         by = "n_da_castanheira",
                         all.x = TRUE
                         )
-<<<<<<< HEAD
-
 sementesClasse <- merge(sementesCazumba,
                         mapeamento,
                         by = "n_da_castanheira",
@@ -66,26 +69,27 @@ sementesClasse <- merge(sementesCazumba,
 ```
 
 Converter quilos para gramas.
-=======
 
-sementesClasse <- merge(sementesCazumba,
-                        mapeamento,
-                        by = "n_da_castanheira",
-                        all.x = TRUE
-                        )
-```
->>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
-
-Converter quilos para gramas.
 ```{r}
 sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
 ```
 
+\newpage
 
+### Cálculo para sementes:
+
+-   Número de sementes por fruto
+
+-   Média de sementes por fruto
+
+-   Peso total e peso de sementes
+
+-   Adição de um campo identificador
 
 ```{r}
+#soma
 sementesClasseSoma = group_by(sementesClasse, Castanhal, tamanho, Ano)
-
+#cálculos
 sementesClasseAgregada = summarise(
     sementesClasseSoma,
     total_sementes = sum(
@@ -100,54 +104,53 @@ sementesClasseAgregada = summarise(
         Peso_total_das_sementes_dos_10.frutos_ouricos_gr,
         na.rm = TRUE
     ),
-    
     peso_semente =  peso_total/total_sementes
 )
-
+#adicionando campo de identificação
 sementesClasseAgregada$id <- paste(sementesClasseAgregada$Castanhal,
                                    sementesClasseAgregada$tamanho,
                                    sementesClasseAgregada$Ano)
 ```
 
-<<<<<<< HEAD
-=======
+\newpage
 
->>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
+### Cálculo para produção:
+
+-   Número de ouriços produzidos
+
+-   Adição de um campo identificador
+
 ```{r}
+#soma
 producaoClasseSoma = group_by(producaoClasse, Castanhal, tamanho, Ano )
-
+#cálculos
 producaoClasseAgregada = summarise(
     producaoClasseSoma,
     total_frutos = sum(
         n_frutos_ouricos_produzidos,
         na.rm = TRUE
     )
-<<<<<<< HEAD
 )
-
-producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
-                                   producaoClasseAgregada$tamanho,
-                                   producaoClasseAgregada$Ano)
-=======
-)
-
+#adicionando campo de identificação
 producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
                                    producaoClasseAgregada$tamanho,
                                    producaoClasseAgregada$Ano)
 ```
 
+### Cálculo de produção total
+
+União das tabelas de produção e sementes a partir com campo de identificação e cálculo de produção total.
 
 ```{r}
-
+#união
 producaototal = merge(producaoClasseAgregada,
                       sementesClasseAgregada,
                       by = "id",
                       all.x = TRUE)
-
+#cáculo do total produzido
 producaototal$producaoTotal = producaototal$total_frutos*
   producaototal$media_sementes*
   producaototal$peso_semente
-
 ```
 
 ```{r}
@@ -155,9 +158,14 @@ producaototal = as.data.frame(producaototal)
 write.csv(producaototal, here("output", "producaoTotal.csv"))
 ```
 
-```{r}
-producaoCastanhal = group_by(producaototal, Castanhal.x, Ano.x )
+\newpage
 
+### Cálculo de produção por castanhal e por classe de tamanho
+
+```{r}
+#agrupar dados por Castanhal e Ano
+producaoCastanhal = group_by(producaototal, Castanhal.x, Ano.x )
+#cálculo da produção
 producaoCastanhalAgregada = summarise(
     producaoCastanhal,
     total = sum(
@@ -165,9 +173,9 @@ producaoCastanhalAgregada = summarise(
         na.rm = TRUE
     )
 )
-
+#agrupar dados por Classe de Tamanho e Castanhal
 producaoTamanho = group_by(producaototal, tamanho.x, Castanhal.x )
-
+#cálculo da produção
 producaoTamanhoAgregada = summarise(
     producaoTamanho,
     total = sum(
@@ -175,216 +183,34 @@ producaoTamanhoAgregada = summarise(
         na.rm = TRUE
     )
 )
-
 ```
 
+#### Exportar arquivos
+
+-   Produção por castanhal
 
 ```{r}
-ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
-  geom_bar(
-    position = position_dodge2(preserve ="single"),
-    stat="identity",
-    width = 0.5,
-    size =0.3,
-    fill = "blue"
-    )+
-  geom_text(
-    aes(label= as.integer(round(total, 0))),
-    size = 3,
-    vjust = -0.5
-    )+
-  
-  ylim(0,1750)+
-  
-  theme_bw()+
-  
-  facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("CASTANHAL")+
-  
-  ylab("PRODUÇÃO (Kg)")+
-  
-  theme(legend.position="top")+
-  
-  theme(axis.text.x = element_text(
-    angle=45,
-    vjust=1,
-    hjust = 1,
-    colour="black",
-    size=rel(1))
-    )
-
+#producaoCastanhalAgregada = as.data.frame(producaoCastanhalAgregada)
+write.csv(producaoCastanhalAgregada, here("output", "producaoCastanhalAgregada.csv"))
 ```
 
+-   Produção por classe de tamanho
+
 ```{r}
-
-producaoTamanhoAgregada$tamanho.x <- factor(producaoTamanhoAgregada$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
-
-
-ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.x), y=total))+
-  geom_bar(
-    position = position_dodge2(preserve ="single"),
-    stat="identity",
-    width = 0.5,
-    size =0.3,
-    fill = "blue"
-    )+
-  geom_text(
-    aes(label= as.integer(round(total, 0))),
-    size = 3,
-    vjust = -0.5
-    )+
-  
-  ylim(0,2000)+
-  
-  theme_bw()+
-  
-  facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("TAMANHO")+
-  
-  ylab("PRODUÇÃO (Kg)")+
-  
-  theme(legend.position="top")+
-  
-  theme(axis.text.x = element_text(
-    angle=45,
-    vjust=1,
-    hjust = 1,
-    colour="black",
-    size=rel(1))
-    )
-
+#producaoCastanhalAgregada = as.data.frame(producaoCastanhalAgregada)
+write.csv(producaoTamanhoAgregada, here("output", "producaoTamanhoAgregada.csv"))
 ```
 
-```{r}
-producaototal$tamanho.x <- factor(producaototal$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+\newpage
 
-
-ggplot(subset(producaototal, !is.na(tamanho.x)), aes(x=tamanho.x))+
-  geom_bar(
-    position = position_dodge2(preserve ="single"),
-    #stat="identity",
-    width = 0.5,
-    size =0.3,
-    fill = "blue"
-    )+
- # geom_text(
-  #  aes(label= as.integer(round(total, 0))),
-   # size = 3,
-    #vjust = -0.5
-    #)+
-  
-  #ylim(0,1750)+
-  
-  #theme_bw()+
-  
-  facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("CASTANHAL")+
-  
-  ylab("PRODUÇÃO (Kg)")+
-  
-  theme(legend.position="top")+
-  
-  theme(axis.text.x = element_text(
-    angle=45,
-    vjust=1,
-    hjust = 1,
-    colour="black",
-    size=rel(1))
-    )
-
-```
+### Gráfico de Produção x Ano x Castanhal
 
 ```{r}
-producao2019 <- subset(producaoClasse, Ano == 2019)
-producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
-
-```
-
-
-```{r}
-
-producaoCastanheira$tamanho <- factor(producaoCastanheira$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
-
-
-ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
-  geom_bar(
-    position = position_dodge2(preserve ="single"),
-    stat="identity",
-    width = 0.5,
-    size =0.3,
-    fill = "blue"
-    )+
-  geom_text(
-    aes(label= as.integer(round(n, 0))),
-    size = 3,
-    vjust = -0.5
-    )+
-  
-  ylim(0,25)+
-  
-  #theme_bw()+
-  
-  facet_wrap(facets = vars(Castanhal))+
-  
-  xlab("CLASSE DE TAMANHO")+
-  
-  ylab("NÚMERO DE CASTANHEIRAS")+
-  
-  theme(legend.position="top")+
-  
-  theme(axis.text.x = element_text(
-    angle=45,
-    vjust=1,
-    hjust = 1,
-    colour="black",
-    size=rel(1))
-    )
-
->>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
-```
-
-```{r}
-
-producaototal = merge(producaoClasseAgregada,
-                      sementesClasseAgregada,
-                      by = "id",
-                      all.x = TRUE)
-
-producaototal$producaoTotal = producaototal$total_frutos*
-  producaototal$media_sementes*
-  producaototal$peso_semente
-
-```
-
-```{r}
+producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
+                                   producaoClasseAgregada$tamanho,
+                                   producaoClasseAgregada$Ano)
 producaototal = as.data.frame(producaototal)
 write.csv(producaototal, here("output", "producaoTotal.csv"))
-```
-
-```{r}
-producaoCastanhal = group_by(producaototal, Castanhal.x, Ano.x )
-
-producaoCastanhalAgregada = summarise(
-    producaoCastanhal,
-    total = sum(
-        producaoTotal,
-        na.rm = TRUE
-    )
-)
-
-producaoTamanho = group_by(producaototal, tamanho.x, Castanhal.x )
-
-producaoTamanhoAgregada = summarise(
-    producaoTamanho,
-    total = sum(
-        producaoTotal,
-        na.rm = TRUE
-    )
-)
-
 ```
 
 ```{r}
@@ -394,26 +220,19 @@ ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(total, 0))),
     size = 3,
     vjust = -0.5
     )+
-  
   ylim(0,1750)+
-  
-  theme_bw()+
-  
+  theme_grey()+
   facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("CASTANHAL")+
-  
+  xlab("ANO")+
   ylab("PRODUÇÃO (Kg)")+
-  
   theme(legend.position="top")+
-  
   theme(axis.text.x = element_text(
     angle=45,
     vjust=1,
@@ -421,40 +240,35 @@ ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
     colour="black",
     size=rel(1))
     )
-
 ```
 
+\newpage
+
+### Gráfico de Produção x Classe de Tamanho x Castanhal
+
 ```{r}
-
+#ordenar as classes de tamanho em ordem crescente
 producaoTamanhoAgregada$tamanho.x <- factor(producaoTamanhoAgregada$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
-
-
+#gerar gráfico excluindo NA's
 ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.x), y=total))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(total, 0))),
     size = 3,
     vjust = -0.5
     )+
-  
   ylim(0,2000)+
-  
-  theme_bw()+
-  
+  theme_grey()+
   facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("TAMANHO")+
-  
+  xlab("CLASSE DE TAMANHO")+
   ylab("PRODUÇÃO (Kg)")+
-  
   theme(legend.position="top")+
-  
   theme(axis.text.x = element_text(
     angle=45,
     vjust=1,
@@ -462,86 +276,52 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
     colour="black",
     size=rel(1))
     )
-
 ```
 
-```{r}
-producaototal$tamanho.x <- factor(producaototal$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+\newpage
 
+### Gráfico Número de Castanheiras x Classe de tamanho
 
-ggplot(subset(producaototal, !is.na(tamanho.x)), aes(x=tamanho.x))+
-  geom_bar(
-    position = position_dodge2(preserve ="single"),
-    #stat="identity",
-    width = 0.5,
-    size =0.3,
-    fill = "blue"
-    )+
- # geom_text(
-  #  aes(label= as.integer(round(total, 0))),
-   # size = 3,
-    #vjust = -0.5
-    #)+
-  
-  #ylim(0,1750)+
-  
-  #theme_bw()+
-  
-  facet_wrap(facets = vars(Castanhal.x))+
-  
-  xlab("CASTANHAL")+
-  
-  ylab("PRODUÇÃO (Kg)")+
-  
-  theme(legend.position="top")+
-  
-  theme(axis.text.x = element_text(
-    angle=45,
-    vjust=1,
-    hjust = 1,
-    colour="black",
-    size=rel(1))
-    )
-
-```
+Selecionando um conjunto de dados (Ano de 2019) como referência para não somar as classes de todos os anos.
 
 ```{r}
+#selecionar por ano
 producao2019 <- subset(producaoClasse, Ano == 2019)
+#agrupar dados
 producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
+```
 
+#### Exportar arquivo
+
+-   Número de castanheiras x Classes de tamanho
+
+```{r}
+write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
 ```
 
 ```{r}
-
+#ordenar as classes de tamanho em ordem crescente
 producaoCastanheira$tamanho <- factor(producaoCastanheira$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
-
-
+#gerar gráfico
 ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(n, 0))),
     size = 3,
     vjust = -0.5
     )+
-  
   ylim(0,25)+
-  
-  #theme_bw()+
-  
+  theme_grey()+
   facet_wrap(facets = vars(Castanhal))+
-  
   xlab("CLASSE DE TAMANHO")+
-  
   ylab("NÚMERO DE CASTANHEIRAS")+
-  
   theme(legend.position="top")+
-  
   theme(axis.text.x = element_text(
     angle=45,
     vjust=1,
@@ -549,5 +329,4 @@ ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
     colour="black",
     size=rel(1))
     )
-
 ```
