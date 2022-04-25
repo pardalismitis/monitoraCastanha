@@ -1,0 +1,121 @@
+"","id","Castanhal.x","tamanho.x","Ano.x","total_frutos","Castanhal.y","tamanho.y","Ano.y","total_sementes","media_sementes","peso_total","peso_semente","producaoTotal"
+"1","Coletivo adulto-senescente 2018","Coletivo","adulto-senescente",2018,4087,"Coletivo","adulto-senescente",2018,175,17.5,1.49,0.00851428571428571,608.963
+"2","Coletivo adulto-senescente 2019","Coletivo","adulto-senescente",2019,2794,"Coletivo","adulto-senescente",2019,217,21.7,2.169,0.00999539170506912,606.0186
+"3","Coletivo adulto-senescente 2020","Coletivo","adulto-senescente",2020,3234,"Coletivo","adulto-senescente",2020,180,18,1.513,0.00840555555555556,489.3042
+"4","Coletivo adulto-senescente 2021","Coletivo","adulto-senescente",2021,1132,NA,NA,NA,NA,NA,NA,NA,NA
+"5","Coletivo adulto 2018","Coletivo","adulto",2018,5900,"Coletivo","adulto",2018,495,16.5,3.812,0.0077010101010101,749.693333333333
+"6","Coletivo adulto 2019","Coletivo","adulto",2019,6087,"Coletivo","adulto",2019,362,12.0666666666667,2.624,0.00724861878453039,532.4096
+"7","Coletivo adulto 2020","Coletivo","adulto",2020,6318,"Coletivo","adulto",2020,573,19.1,4.06,0.00708551483420593,855.036
+"8","Coletivo adulto 2021","Coletivo","adulto",2021,4678,NA,NA,NA,NA,NA,NA,NA,NA
+"9","Coletivo jovem-adulto 2018","Coletivo","jovem-adulto",2018,1055,"Coletivo","jovem-adulto",2018,194,19.4,1.668,0.0085979381443299,175.974
+"10","Coletivo jovem-adulto 2019","Coletivo","jovem-adulto",2019,1670,"Coletivo","jovem-adulto",2019,175,17.5,1.42,0.00811428571428571,237.14
+"11","Coletivo jovem-adulto 2020","Coletivo","jovem-adulto",2020,1285,"Coletivo","jovem-adulto",2020,157,15.7,1.159,0.00738216560509554,148.9315
+"12","Coletivo jovem-adulto 2021","Coletivo","jovem-adulto",2021,1224,"Coletivo","jovem-adulto",2021,0,NA,0,NA,NA
+"13","Coletivo jovem 2018","Coletivo","jovem",2018,22,NA,NA,NA,NA,NA,NA,NA,NA
+"14","Coletivo jovem 2019","Coletivo","jovem",2019,7,NA,NA,NA,NA,NA,NA,NA,NA
+"15","Coletivo jovem 2020","Coletivo","jovem",2020,65,NA,NA,NA,NA,NA,NA,NA,NA
+"16","Coletivo jovem 2021","Coletivo","jovem",2021,24,NA,NA,NA,NA,NA,NA,NA,NA
+"17","Coletivo senescente 2018","Coletivo","senescente",2018,159,NA,NA,NA,NA,NA,NA,NA,NA
+"18","Coletivo senescente 2019","Coletivo","senescente",2019,121,NA,NA,NA,NA,NA,NA,NA,NA
+"19","Coletivo senescente 2020","Coletivo","senescente",2020,216,NA,NA,NA,NA,NA,NA,NA,NA
+"20","Coletivo senescente 2021","Coletivo","senescente",2021,312,NA,NA,NA,NA,NA,NA,NA,NA
+"21","Davi adulto-senescente 2018","Davi","adulto-senescente",2018,1309,"Davi","adulto-senescente",2018,212,21.2,2.488,0.0117358490566038,325.6792
+"22","Davi adulto-senescente 2019","Davi","adulto-senescente",2019,861,"Davi","adulto-senescente",2019,176,17.6,2.2,0.0125,189.42
+"23","Davi adulto-senescente 2020","Davi","adulto-senescente",2020,684,"Davi","adulto-senescente",2020,196,19.6,2.3,0.011734693877551,157.32
+"24","Davi adulto-senescente 2021","Davi","adulto-senescente",2021,1135,"Davi","adulto-senescente",2021,0,NA,0,NA,NA
+"25","Davi adulto 2018","Davi","adulto",2018,1274,"Davi","adulto",2018,589,19.6333333333333,5.048,0.0085704584040747,214.371733333333
+"26","Davi adulto 2019","Davi","adulto",2019,1284,"Davi","adulto",2019,356,17.8,3.4,0.00955056179775281,218.28
+"27","Davi adulto 2020","Davi","adulto",2020,1562,"Davi","adulto",2020,355,17.75,3.1,0.00873239436619718,242.11
+"28","Davi adulto 2021","Davi","adulto",2021,1548,NA,NA,NA,NA,NA,NA,NA,NA
+"29","Davi jovem-adulto 2018","Davi","jovem-adulto",2018,244,"Davi","jovem-adulto",2018,189,18.9,1.446,0.00765079365079365,35.2824
+"30","Davi jovem-adulto 2019","Davi","jovem-adulto",2019,235,"Davi","jovem-adulto",2019,182,18.2,1.4,0.00769230769230769,32.9
+"31","Davi jovem-adulto 2020","Davi","jovem-adulto",2020,127,"Davi","jovem-adulto",2020,175,17.5,1.4,0.008,17.78
+"32","Davi jovem-adulto 2021","Davi","jovem-adulto",2021,225,NA,NA,NA,NA,NA,NA,NA,NA
+"33","Dimar adulto-senescente 2019","Dimar","adulto-senescente",2019,776,"Dimar","adulto-senescente",2019,385,19.25,3.325,0.00863636363636364,129.01
+"34","Dimar adulto-senescente 2020","Dimar","adulto-senescente",2020,673,"Dimar","adulto-senescente",2020,383,19.15,3.124,0.00815665796344647,105.1226
+"35","Dimar adulto-senescente 2021","Dimar","adulto-senescente",2021,624,NA,NA,NA,NA,NA,NA,NA,NA
+"36","Dimar adulto 2019","Dimar","adulto",2019,320,"Dimar","adulto",2019,189,18.9,1.025,0.00542328042328042,32.8
+"37","Dimar adulto 2020","Dimar","adulto",2020,692,"Dimar","adulto",2020,190,19,1.038,0.00546315789473684,71.8296
+"38","Dimar adulto 2021","Dimar","adulto",2021,212,"Dimar","adulto",2021,0,NA,0,NA,NA
+"39","Dimar jovem-adulto 2019","Dimar","jovem-adulto",2019,250,"Dimar","jovem-adulto",2019,199,19.9,1.75,0.00879396984924623,43.75
+"40","Dimar jovem-adulto 2020","Dimar","jovem-adulto",2020,109,"Dimar","jovem-adulto",2020,191,19.1,1.306,0.00683769633507853,14.2354
+"41","Dimar jovem-adulto 2021","Dimar","jovem-adulto",2021,356,NA,NA,NA,NA,NA,NA,NA,NA
+"42","Dimar NA 2018","Dimar",NA,2018,0,NA,NA,NA,NA,NA,NA,NA,NA
+"43","Irmãos Gamas adulto-senescente 2019","Irmãos Gamas","adulto-senescente",2019,304,"Irmãos Gamas","adulto-senescente",2019,244,24.4,2,0.00819672131147541,60.8
+"44","Irmãos Gamas adulto-senescente 2020","Irmãos Gamas","adulto-senescente",2020,413,"Irmãos Gamas","adulto-senescente",2020,254,25.4,1.6,0.0062992125984252,66.08
+"45","Irmãos Gamas adulto-senescente 2021","Irmãos Gamas","adulto-senescente",2021,254,NA,NA,NA,NA,NA,NA,NA,NA
+"46","Irmãos Gamas adulto 2019","Irmãos Gamas","adulto",2019,1615,"Irmãos Gamas","adulto",2019,397,19.85,2.75,0.00692695214105793,222.0625
+"47","Irmãos Gamas adulto 2020","Irmãos Gamas","adulto",2020,1469,"Irmãos Gamas","adulto",2020,390,19.5,2.4,0.00615384615384615,176.28
+"48","Irmãos Gamas adulto 2021","Irmãos Gamas","adulto",2021,1456,NA,NA,NA,NA,NA,NA,NA,NA
+"49","Irmãos Gamas jovem-adulto 2019","Irmãos Gamas","jovem-adulto",2019,277,"Irmãos Gamas","jovem-adulto",2019,351,17.55,2.75,0.00783475783475784,38.0875
+"50","Irmãos Gamas jovem-adulto 2020","Irmãos Gamas","jovem-adulto",2020,177,"Irmãos Gamas","jovem-adulto",2020,362,18.1,2.4,0.00662983425414365,21.24
+"51","Irmãos Gamas jovem-adulto 2021","Irmãos Gamas","jovem-adulto",2021,389,"Irmãos Gamas","jovem-adulto",2021,0,NA,0,NA,NA
+"52","Irmãos Gamas NA 2018","Irmãos Gamas",NA,2018,0,NA,NA,NA,NA,NA,NA,NA,NA
+"53","Mariazinha adulto-senescente 2018","Mariazinha","adulto-senescente",2018,694,"Mariazinha","adulto-senescente",2018,186,18.6,1.904,0.0102365591397849,132.1376
+"54","Mariazinha adulto-senescente 2019","Mariazinha","adulto-senescente",2019,546,"Mariazinha","adulto-senescente",2019,160,16,1.97,0.0123125,107.562
+"55","Mariazinha adulto-senescente 2020","Mariazinha","adulto-senescente",2020,902,"Mariazinha","adulto-senescente",2020,190,19,1.735,0.00913157894736842,156.497
+"56","Mariazinha adulto-senescente 2021","Mariazinha","adulto-senescente",2021,1137,NA,NA,NA,NA,NA,NA,NA,NA
+"57","Mariazinha adulto 2018","Mariazinha","adulto",2018,2194,"Mariazinha","adulto",2018,516,17.2,5.014,0.00971705426356589,366.690533333333
+"58","Mariazinha adulto 2019","Mariazinha","adulto",2019,1038,"Mariazinha","adulto",2019,492,16.4,5.385,0.0109451219512195,186.321
+"59","Mariazinha adulto 2020","Mariazinha","adulto",2020,1759,"Mariazinha","adulto",2020,505,16.8333333333333,4.86,0.00962376237623762,284.958
+"60","Mariazinha adulto 2021","Mariazinha","adulto",2021,793,"Mariazinha","adulto",2021,0,NA,0,NA,NA
+"61","Mariazinha jovem-adulto 2018","Mariazinha","jovem-adulto",2018,517,"Mariazinha","jovem-adulto",2018,219,21.9,1.976,0.00902283105022831,102.1592
+"62","Mariazinha jovem-adulto 2019","Mariazinha","jovem-adulto",2019,511,"Mariazinha","jovem-adulto",2019,227,22.7,2.13,0.00938325991189427,108.843
+"63","Mariazinha jovem-adulto 2020","Mariazinha","jovem-adulto",2020,434,"Mariazinha","jovem-adulto",2020,219,21.9,1.81,0.0082648401826484,78.554
+"64","Mariazinha jovem-adulto 2021","Mariazinha","jovem-adulto",2021,637,NA,NA,NA,NA,NA,NA,NA,NA
+"65","Mariazinha senescente 2018","Mariazinha","senescente",2018,99,NA,NA,NA,NA,NA,NA,NA,NA
+"66","Mariazinha senescente 2019","Mariazinha","senescente",2019,290,NA,NA,NA,NA,NA,NA,NA,NA
+"67","Mariazinha senescente 2020","Mariazinha","senescente",2020,99,NA,NA,NA,NA,NA,NA,NA,NA
+"68","Mariazinha senescente 2021","Mariazinha","senescente",2021,41,NA,NA,NA,NA,NA,NA,NA,NA
+"69","Marizan adulto 2019","Marizan","adulto",2019,434,"Marizan","adulto",2019,616,20.5333333333333,5.425,0.00880681818181818,78.4816666666667
+"70","Marizan adulto 2020","Marizan","adulto",2020,451,"Marizan","adulto",2020,594,19.8,5,0.00841750841750842,75.1666666666667
+"71","Marizan adulto 2021","Marizan","adulto",2021,377,NA,NA,NA,NA,NA,NA,NA,NA
+"72","Marizan jovem-adulto 2019","Marizan","jovem-adulto",2019,310,"Marizan","jovem-adulto",2019,253,25.3,1.75,0.00691699604743083,54.25
+"73","Marizan jovem-adulto 2020","Marizan","jovem-adulto",2020,223,"Marizan","jovem-adulto",2020,271,27.1,2,0.00738007380073801,44.6
+"74","Marizan jovem-adulto 2021","Marizan","jovem-adulto",2021,113,"Marizan","jovem-adulto",2021,0,NA,0,NA,NA
+"75","Marizan NA 2018","Marizan",NA,2018,0,NA,NA,NA,NA,NA,NA,NA,NA
+"76","Marizan senescente 2019","Marizan","senescente",2019,724,"Marizan","senescente",2019,195,19.5,1.7,0.00871794871794872,123.08
+"77","Marizan senescente 2020","Marizan","senescente",2020,345,"Marizan","senescente",2020,207,20.7,1.7,0.00821256038647343,58.65
+"78","Marizan senescente 2021","Marizan","senescente",2021,415,NA,NA,NA,NA,NA,NA,NA,NA
+"79","Zequinha adulto-senescente 2019","Zequinha","adulto-senescente",2019,1134,"Zequinha","adulto-senescente",2019,175,17.5,1.75,0.01,198.45
+"80","Zequinha adulto-senescente 2020","Zequinha","adulto-senescente",2020,2229,"Zequinha","adulto-senescente",2020,163,16.3,1.8,0.0110429447852761,401.22
+"81","Zequinha adulto-senescente 2021","Zequinha","adulto-senescente",2021,636,NA,NA,NA,NA,NA,NA,NA,NA
+"82","Zequinha adulto 2019","Zequinha","adulto",2019,2214,"Zequinha","adulto",2019,336,16.8,3.503,0.0104255952380952,387.7821
+"83","Zequinha adulto 2020","Zequinha","adulto",2020,3318,"Zequinha","adulto",2020,382,20.1052631578947,3.9,0.0102094240837696,681.063157894737
+"84","Zequinha adulto 2021","Zequinha","adulto",2021,1708,NA,NA,NA,NA,NA,NA,NA,NA
+"85","Zequinha jovem-adulto 2019","Zequinha","jovem-adulto",2019,1873,"Zequinha","jovem-adulto",2019,191,9.55,1.75,0.00916230366492147,163.8875
+"86","Zequinha jovem-adulto 2020","Zequinha","jovem-adulto",2020,1243,"Zequinha","jovem-adulto",2020,165,16.5,1.8,0.0109090909090909,223.74
+"87","Zequinha jovem-adulto 2021","Zequinha","jovem-adulto",2021,2664,"Zequinha","jovem-adulto",2021,0,NA,0,NA,NA
+"88","Zequinha NA 2018","Zequinha",NA,2018,0,NA,NA,NA,NA,NA,NA,NA,NA
+"89","Zequinha senescente 2019","Zequinha","senescente",2019,380,NA,NA,NA,NA,NA,NA,NA,NA
+"90","Zequinha senescente 2020","Zequinha","senescente",2020,804,NA,NA,NA,NA,NA,NA,NA,NA
+"91","Zequinha senescente 2021","Zequinha","senescente",2021,70,NA,NA,NA,NA,NA,NA,NA,NA
+"92","Zirmão 2 adulto-senescente 2019","Zirmão 2","adulto-senescente",2019,442,"Zirmão 2","adulto-senescente",2019,182,18.2,2.135,0.0117307692307692,94.367
+"93","Zirmão 2 adulto-senescente 2020","Zirmão 2","adulto-senescente",2020,351,"Zirmão 2","adulto-senescente",2020,180,18,1.65,0.00916666666666667,57.915
+"94","Zirmão 2 adulto-senescente 2021","Zirmão 2","adulto-senescente",2021,470,NA,NA,NA,NA,NA,NA,NA,NA
+"95","Zirmão 2 adulto 2019","Zirmão 2","adulto",2019,2620,"Zirmão 2","adulto",2019,532,17.7333333333333,4.575,0.00859962406015038,399.55
+"96","Zirmão 2 adulto 2020","Zirmão 2","adulto",2020,3041,"Zirmão 2","adulto",2020,564,18.8,4.495,0.00796985815602837,455.643166666667
+"97","Zirmão 2 adulto 2021","Zirmão 2","adulto",2021,3030,"Zirmão 2","adulto",2021,0,NA,0,NA,NA
+"98","Zirmão 2 jovem-adulto 2019","Zirmão 2","jovem-adulto",2019,636,"Zirmão 2","jovem-adulto",2019,210,21,1.655,0.00788095238095238,105.258
+"99","Zirmão 2 jovem-adulto 2020","Zirmão 2","jovem-adulto",2020,347,"Zirmão 2","jovem-adulto",2020,197,19.7,1.405,0.00713197969543147,48.7535
+"100","Zirmão 2 jovem-adulto 2021","Zirmão 2","jovem-adulto",2021,654,NA,NA,NA,NA,NA,NA,NA,NA
+"101","Zirmão 2 NA 2018","Zirmão 2",NA,2018,0,NA,NA,NA,NA,NA,NA,NA,NA
+"102","Zirmão 2 senescente 2019","Zirmão 2","senescente",2019,168,NA,NA,NA,NA,NA,NA,NA,NA
+"103","Zirmão 2 senescente 2020","Zirmão 2","senescente",2020,152,NA,NA,NA,NA,NA,NA,NA,NA
+"104","Zirmão 2 senescente 2021","Zirmão 2","senescente",2021,203,NA,NA,NA,NA,NA,NA,NA,NA
+"105","Zirmão adulto-senescente 2018","Zirmão","adulto-senescente",2018,1009,NA,NA,NA,NA,NA,NA,NA,NA
+"106","Zirmão adulto-senescente 2019","Zirmão","adulto-senescente",2019,840,NA,NA,NA,NA,NA,NA,NA,NA
+"107","Zirmão adulto-senescente 2020","Zirmão","adulto-senescente",2020,846,NA,NA,NA,NA,NA,NA,NA,NA
+"108","Zirmão adulto-senescente 2021","Zirmão","adulto-senescente",2021,820,NA,NA,NA,NA,NA,NA,NA,NA
+"109","Zirmão adulto 2018","Zirmão","adulto",2018,2913,"Zirmão","adulto",2018,429,21.45,3.124,0.00728205128205128,455.0106
+"110","Zirmão adulto 2019","Zirmão","adulto",2019,2165,"Zirmão","adulto",2019,419,20.95,3.82,0.00911694510739857,413.515
+"111","Zirmão adulto 2020","Zirmão","adulto",2020,2558,"Zirmão","adulto",2020,444,22.2,3.795,0.0085472972972973,485.3805
+"112","Zirmão adulto 2021","Zirmão","adulto",2021,1923,"Zirmão","adulto",2021,0,NA,0,NA,NA
+"113","Zirmão jovem-adulto 2018","Zirmão","jovem-adulto",2018,1031,"Zirmão","jovem-adulto",2018,395,19.75,3.378,0.00855189873417722,174.1359
+"114","Zirmão jovem-adulto 2019","Zirmão","jovem-adulto",2019,1044,"Zirmão","jovem-adulto",2019,391,19.55,3.54,0.0090537084398977,184.788
+"115","Zirmão jovem-adulto 2020","Zirmão","jovem-adulto",2020,863,"Zirmão","jovem-adulto",2020,446,22.3,3.97,0.00890134529147982,171.3055
+"116","Zirmão jovem-adulto 2021","Zirmão","jovem-adulto",2021,1051,NA,NA,NA,NA,NA,NA,NA,NA
+"117","Zirmão senescente 2018","Zirmão","senescente",2018,199,"Zirmão","senescente",2018,174,17.4,1.446,0.00831034482758621,28.7754
+"118","Zirmão senescente 2019","Zirmão","senescente",2019,380,"Zirmão","senescente",2019,185,18.5,1.6,0.00864864864864865,60.8
+"119","Zirmão senescente 2020","Zirmão","senescente",2020,256,"Zirmão","senescente",2020,164,16.4,1.335,0.00814024390243902,34.176
+"120","Zirmão senescente 2021","Zirmão","senescente",2021,167,NA,NA,NA,NA,NA,NA,NA,NA

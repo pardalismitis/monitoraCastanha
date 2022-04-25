@@ -15,7 +15,7 @@ rm(list = ls(all = TRUE))
 #install.packages("vctrs")
 #library(tidyverse)
 #install.packages("xlsx")
-library(xlsx)
+#library(xlsx)
 library(ggplot2)
 library(here)
 #library(vctrs)
@@ -124,10 +124,10 @@ write.csv(mapeamento, here("output", "formulario6Mapeamento.csv"))
 #options(warn = -1)
 #options(warn = defaultW)
 
-mapeamento$tamanho <- factor(mapeamento$tamanho,levels = c("", "jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+mapeamento$tamanho <- factor(mapeamento$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
 
-ggplot(
-  mapeamento, aes(
+
+ggplot(subset(mapeamento, !is.na(tamanho)), aes(
     #fill = UC,
     y = producaoMediaEmLatas,
     x = tamanho)

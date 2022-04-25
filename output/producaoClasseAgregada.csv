@@ -1,0 +1,116 @@
+"","Castanhal","tamanho","Ano","total_frutos"
+"1","Coletivo","adulto",2018,5900
+"2","Coletivo","adulto",2019,6087
+"3","Coletivo","adulto",2020,6318
+"4","Coletivo","adulto",2021,4678
+"5","Coletivo","adulto-senescente",2018,4087
+"6","Coletivo","adulto-senescente",2019,2794
+"7","Coletivo","adulto-senescente",2020,3234
+"8","Coletivo","adulto-senescente",2021,1132
+"9","Coletivo","jovem",2018,22
+"10","Coletivo","jovem",2019,7
+"11","Coletivo","jovem",2020,65
+"12","Coletivo","jovem",2021,24
+"13","Coletivo","jovem-adulto",2018,1055
+"14","Coletivo","jovem-adulto",2019,1670
+"15","Coletivo","jovem-adulto",2020,1285
+"16","Coletivo","jovem-adulto",2021,1224
+"17","Coletivo","senescente",2018,159
+"18","Coletivo","senescente",2019,121
+"19","Coletivo","senescente",2020,216
+"20","Coletivo","senescente",2021,312
+"21","Davi","adulto",2018,1274
+"22","Davi","adulto",2019,1284
+"23","Davi","adulto",2020,1562
+"24","Davi","adulto",2021,1548
+"25","Davi","adulto-senescente",2018,1309
+"26","Davi","adulto-senescente",2019,861
+"27","Davi","adulto-senescente",2020,684
+"28","Davi","adulto-senescente",2021,1135
+"29","Davi","jovem-adulto",2018,244
+"30","Davi","jovem-adulto",2019,235
+"31","Davi","jovem-adulto",2020,127
+"32","Davi","jovem-adulto",2021,225
+"33","Dimar","adulto",2019,320
+"34","Dimar","adulto",2020,692
+"35","Dimar","adulto",2021,212
+"36","Dimar","adulto-senescente",2019,776
+"37","Dimar","adulto-senescente",2020,673
+"38","Dimar","adulto-senescente",2021,624
+"39","Dimar","jovem-adulto",2019,250
+"40","Dimar","jovem-adulto",2020,109
+"41","Dimar","jovem-adulto",2021,356
+"42","Irmaos Gamas","adulto",2019,1615
+"43","Irmaos Gamas","adulto-senescente",2019,304
+"44","Irmaos Gamas","jovem-adulto",2019,277
+"45","Irmãos Gamas","adulto",2020,1469
+"46","Irmãos Gamas","adulto",2021,1456
+"47","Irmãos Gamas","adulto-senescente",2020,413
+"48","Irmãos Gamas","adulto-senescente",2021,254
+"49","Irmãos Gamas","jovem-adulto",2020,177
+"50","Irmãos Gamas","jovem-adulto",2021,389
+"51","Mariazinha","adulto",2018,2194
+"52","Mariazinha","adulto",2019,1038
+"53","Mariazinha","adulto",2020,1759
+"54","Mariazinha","adulto",2021,793
+"55","Mariazinha","adulto-senescente",2018,694
+"56","Mariazinha","adulto-senescente",2019,546
+"57","Mariazinha","adulto-senescente",2020,902
+"58","Mariazinha","adulto-senescente",2021,1137
+"59","Mariazinha","jovem-adulto",2018,517
+"60","Mariazinha","jovem-adulto",2019,511
+"61","Mariazinha","jovem-adulto",2020,434
+"62","Mariazinha","jovem-adulto",2021,637
+"63","Mariazinha","senescente",2018,99
+"64","Mariazinha","senescente",2019,290
+"65","Mariazinha","senescente",2020,99
+"66","Mariazinha","senescente",2021,41
+"67","Marizan","adulto",2019,434
+"68","Marizan","adulto",2020,451
+"69","Marizan","adulto",2021,377
+"70","Marizan","jovem-adulto",2019,310
+"71","Marizan","jovem-adulto",2020,223
+"72","Marizan","jovem-adulto",2021,113
+"73","Marizan","senescente",2019,724
+"74","Marizan","senescente",2020,345
+"75","Marizan","senescente",2021,415
+"76","Zequinha","adulto",2019,2214
+"77","Zequinha","adulto",2020,3318
+"78","Zequinha","adulto",2021,1708
+"79","Zequinha","adulto-senescente",2019,1134
+"80","Zequinha","adulto-senescente",2020,2229
+"81","Zequinha","adulto-senescente",2021,636
+"82","Zequinha","jovem-adulto",2019,1873
+"83","Zequinha","jovem-adulto",2020,1243
+"84","Zequinha","jovem-adulto",2021,2664
+"85","Zequinha","senescente",2019,380
+"86","Zequinha","senescente",2020,804
+"87","Zequinha","senescente",2021,70
+"88","Zirmao","adulto",2018,2913
+"89","Zirmao","adulto",2019,2165
+"90","Zirmao","adulto-senescente",2018,1009
+"91","Zirmao","adulto-senescente",2019,840
+"92","Zirmao","jovem-adulto",2018,1031
+"93","Zirmao","jovem-adulto",2019,1044
+"94","Zirmao","senescente",2018,199
+"95","Zirmao","senescente",2019,380
+"96","Zirmão","adulto",2020,2558
+"97","Zirmão","adulto",2021,1923
+"98","Zirmão","adulto-senescente",2020,846
+"99","Zirmão","adulto-senescente",2021,820
+"100","Zirmão","jovem-adulto",2020,863
+"101","Zirmão","jovem-adulto",2021,1051
+"102","Zirmão","senescente",2020,256
+"103","Zirmão","senescente",2021,167
+"104","Zirmao 2","adulto",2019,2620
+"105","Zirmao 2","adulto-senescente",2019,442
+"106","Zirmao 2","jovem-adulto",2019,636
+"107","Zirmao 2","senescente",2019,168
+"108","Zirmão 2","adulto",2020,3041
+"109","Zirmão 2","adulto",2021,3030
+"110","Zirmão 2","adulto-senescente",2020,351
+"111","Zirmão 2","adulto-senescente",2021,470
+"112","Zirmão 2","jovem-adulto",2020,347
+"113","Zirmão 2","jovem-adulto",2021,654
+"114","Zirmão 2","senescente",2020,152
+"115","Zirmão 2","senescente",2021,203
