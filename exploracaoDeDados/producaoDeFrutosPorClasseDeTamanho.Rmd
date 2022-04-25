@@ -282,15 +282,6 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
 
 ### Gráfico Número de Castanheiras x Classe de tamanho
 
-Selecionando um conjunto de dados (Ano de 2019) como referência para não somar as classes de todos os anos.
-
-```{r}
-#selecionar por ano
-producao2019 <- subset(producaoClasse, Ano == 2019)
-#agrupar dados
-producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
-```
-
 #### Exportar arquivo
 
 -   Número de castanheiras x Classes de tamanho
@@ -299,11 +290,40 @@ producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
 write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
 ```
 
+
+```{r}
+#selecionar por ano
+castanheiras01 <- select(mapeamento, UC, nomeCastanhal, n_da_castanheira, tamanho)
+castanheiras01 <- subset(castanheiras01, UC == "Cazumbá-Iracema")
+castanheiras01 <- subset(castanheiras01, nomeCastanhal != "iracema" )
+#agrupar dados
+numeroDeCastanheiras <- castanheiras01 %>% group_by(tamanho, nomeCastanhal) %>%count()
+
+#contagem1 <- numeroDeCastanheiras[,c(2,3)]
+#contagem = summarise(
+#    contagem1,
+#    total = sum(n)
+#)
+
+
+numeroDeCastanheiras$nomeCastanhal <- gsub("coletivo","Coletivo",
+                             gsub("davi","Davi",
+                             gsub("dima", "Dima",
+                             gsub("irmaos_gamas", "Irmãos Gamas",
+                             gsub("mariazinha", "Mariazinha",
+                             gsub("marizan", "Marizan",
+                             gsub("zequinha", "Zequinha",
+                             gsub("zirmao", "Zirmão",
+                             gsub("zirmao_2", "Zirmão 2",
+                                  numeroDeCastanheiras$nomeCastanhal)))))))))
+```
+
+
 ```{r}
 #ordenar as classes de tamanho em ordem crescente
-producaoCastanheira$tamanho <- factor(producaoCastanheira$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+numeroDeCastanheiras$tamanho <- factor(numeroDeCastanheiras$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
 #gerar gráfico
-ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
+ggplot(subset(numeroDeCastanheiras, !is.na(tamanho)), aes(x=tamanho, y=n))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
@@ -316,9 +336,9 @@ ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
     size = 3,
     vjust = -0.5
     )+
-  ylim(0,25)+
+  ylim(0,125)+
   theme_grey()+
-  facet_wrap(facets = vars(Castanhal))+
+  facet_wrap(facets = vars(nomeCastanhal))+
   xlab("CLASSE DE TAMANHO")+
   ylab("NÚMERO DE CASTANHEIRAS")+
   theme(legend.position="top")+
