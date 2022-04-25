@@ -154,13 +154,14 @@ producaoTamanhoAgregada = summarise(
 
 
 ```{r}
+#rgb(0.0,0.6,0.3)
 ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
   geom_bar(
     position = position_dodge2(preserve ="single"),
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(total, 0))),
@@ -170,11 +171,11 @@ ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
   
   ylim(0,1750)+
   
-  theme_bw()+
+  theme_grey()+
   
   facet_wrap(facets = vars(Castanhal.x))+
   
-  xlab("CASTANHAL")+
+  xlab("ANO")+
   
   ylab("PRODUÇÃO (Kg)")+
   
@@ -201,7 +202,7 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(total, 0))),
@@ -211,11 +212,11 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
   
   ylim(0,2000)+
   
-  theme_bw()+
+  theme_grey()+
   
   facet_wrap(facets = vars(Castanhal.x))+
   
-  xlab("TAMANHO")+
+  xlab("CLASSE DE TAMANHO")+
   
   ylab("PRODUÇÃO (Kg)")+
   
@@ -241,7 +242,7 @@ ggplot(subset(producaototal, !is.na(tamanho.x)), aes(x=tamanho.x))+
     #stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
  # geom_text(
   #  aes(label= as.integer(round(total, 0))),
@@ -251,7 +252,7 @@ ggplot(subset(producaototal, !is.na(tamanho.x)), aes(x=tamanho.x))+
   
   #ylim(0,1750)+
   
-  #theme_bw()+
+  theme_grey()+
   
   facet_wrap(facets = vars(Castanhal.x))+
   
@@ -289,7 +290,7 @@ ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
     stat="identity",
     width = 0.5,
     size =0.3,
-    fill = "blue"
+    fill = "#006633"
     )+
   geom_text(
     aes(label= as.integer(round(n, 0))),
@@ -299,7 +300,7 @@ ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
   
   ylim(0,25)+
   
-  #theme_bw()+
+  theme_grey()+
   
   facet_wrap(facets = vars(Castanhal))+
   
