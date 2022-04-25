@@ -1,0 +1,557 @@
+"","Castanhal","n_da_castanheira","CAP","n_frutos_ouricos_produzidos","n_frutos_ouricos_acessados_pela_fauna","UC","Ano"
+"1","Coletivo",57,288,215,0,"Cazumba",2018
+"2","Coletivo",55,267,3,0,"Cazumba",2018
+"3","Coletivo",54,446,641,1,"Cazumba",2018
+"4","Coletivo",51,187,88,0,"Cazumba",2018
+"5","Coletivo",46,326,543,0,"Cazumba",2018
+"6","Coletivo",44,495,797,0,"Cazumba",2018
+"7","Coletivo",43,438,262,0,"Cazumba",2018
+"8","Coletivo",40,366,1199,0,"Cazumba",2018
+"9","Coletivo",110,338,119,0,"Cazumba",2018
+"10","Coletivo",109,242,0,0,"Cazumba",2018
+"11","Coletivo",117,302,120,1,"Cazumba",2018
+"12","Coletivo",137,351,38,0,"Cazumba",2018
+"13","Coletivo",141,241,239,1,"Cazumba",2018
+"14","Coletivo",139,368,21,0,"Cazumba",2018
+"15","Coletivo",149,470,297,2,"Cazumba",2018
+"16","Coletivo",157,560,420,0,"Cazumba",2018
+"17","Coletivo",165,312,73,4,"Cazumba",2018
+"18","Coletivo",174,333,3,0,"Cazumba",2018
+"19","Coletivo",7,509,385,5,"Cazumba",2018
+"20","Coletivo",9,327,112,0,"Cazumba",2018
+"21","Coletivo",11,158,22,0,"Cazumba",2018
+"22","Coletivo",19,308,21,0,"Cazumba",2018
+"23","Coletivo",17,430,146,0,"Cazumba",2018
+"24","Coletivo",21,437,458,0,"Cazumba",2018
+"25","Coletivo",26,452,312,0,"Cazumba",2018
+"26","Coletivo",81,380,303,1,"Cazumba",2018
+"27","Coletivo",82,317,477,0,"Cazumba",2018
+"28","Coletivo",92,310,218,0,"Cazumba",2018
+"29","Coletivo",89,509,108,16,"Cazumba",2018
+"30","Coletivo",118,460,21,0,"Cazumba",2018
+"31","Coletivo",119,253,1,0,"Cazumba",2018
+"32","Coletivo",120,349,62,0,"Cazumba",2018
+"33","Coletivo",175,640,159,0,"Cazumba",2018
+"34","Coletivo",186,514,948,0,"Cazumba",2018
+"35","Coletivo",182,506,81,1,"Cazumba",2018
+"36","Coletivo",180,443,7,0,"Cazumba",2018
+"37","Coletivo",192,456,806,0,"Cazumba",2018
+"38","Coletivo",198,277,150,0,"Cazumba",2018
+"39","Coletivo",199,535,1348,0,"Cazumba",2018
+"40","Davi",285,417,136,10,"Cazumba",2018
+"41","Davi",317,330,6,1,"Cazumba",2018
+"42","Davi",312,448,79,0,"Cazumba",2018
+"43","Davi",315,311,2,0,"Cazumba",2018
+"44","Davi",308,307,105,2,"Cazumba",2018
+"45","Davi",361,414,711,0,"Cazumba",2018
+"46","Davi",359,263,79,0,"Cazumba",2018
+"47","Davi",360,319,9,0,"Cazumba",2018
+"48","Davi",354,459,149,0,"Cazumba",2018
+"49","Davi",339,407,10,0,"Cazumba",2018
+"50","Davi",290,519,411,2,"Cazumba",2018
+"51","Davi",297,510,2,0,"Cazumba",2018
+"52","Davi",327,623,248,0,"Cazumba",2018
+"53","Davi",325,361,12,0,"Cazumba",2018
+"54","Davi",322,237,58,3,"Cazumba",2018
+"55","Davi",320,551,81,0,"Cazumba",2018
+"56","Davi",475,395,162,0,"Cazumba",2018
+"57","Davi",476,504,567,3,"Cazumba",2018
+"58","Mariazinha",230,356,344,1,"Cazumba",2018
+"59","Mariazinha",227,332,231,0,"Cazumba",2018
+"60","Mariazinha",217,260,296,1,"Cazumba",2018
+"61","Mariazinha",222,460,448,1,"Cazumba",2018
+"62","Mariazinha",245,463,800,3,"Cazumba",2018
+"63","Mariazinha",233,417,111,1,"Cazumba",2018
+"64","Mariazinha",241,212,54,0,"Cazumba",2018
+"65","Mariazinha",253,256,33,0,"Cazumba",2018
+"66","Mariazinha",273,654,99,0,"Cazumba",2018
+"67","Mariazinha",280,488,28,0,"Cazumba",2018
+"68","Mariazinha",265,196,134,0,"Cazumba",2018
+"69","Mariazinha",256,405,260,0,"Cazumba",2018
+"70","Mariazinha",251,554,186,0,"Cazumba",2018
+"71","Mariazinha",246,635,480,0,"Cazumba",2018
+"72","Zirmao",415,274,408,1,"Cazumba",2018
+"73","Zirmao",423,659,199,1,"Cazumba",2018
+"74","Zirmao",432,449,1119,0,"Cazumba",2018
+"75","Zirmao",436,544,189,1,"Cazumba",2018
+"76","Zirmao",438,180,0,0,"Cazumba",2018
+"77","Zirmao",437,221,97,6,"Cazumba",2018
+"78","Zirmao",447,290,163,0,"Cazumba",2018
+"79","Zirmao",450,475,253,1,"Cazumba",2018
+"80","Zirmao",453,420,466,0,"Cazumba",2018
+"81","Zirmao",460,250,172,0,"Cazumba",2018
+"82","Zirmao",461,349,206,0,"Cazumba",2018
+"83","Zirmao",467,390,240,0,"Cazumba",2018
+"84","Zirmao",475,395,162,0,"Cazumba",2018
+"85","Zirmao",476,504,567,3,"Cazumba",2018
+"86","Zirmao",478,393,258,0,"Cazumba",2018
+"87","Zirmao",481,475,462,0,"Cazumba",2018
+"88","Zirmao",497,172,0,0,"Cazumba",2018
+"89","Zirmao",405,201,191,0,"Cazumba",2018
+"90","Coletivo",57,290,238,0,"Cazumba",2019
+"91","Coletivo",55,267,83,0,"Cazumba",2019
+"92","Coletivo",54,444,214,0,"Cazumba",2019
+"93","Coletivo",51,187,134,3,"Cazumba",2019
+"94","Coletivo",46,338,18,0,"Cazumba",2019
+"95","Coletivo",44,497,10,0,"Cazumba",2019
+"96","Coletivo",43,437,315,0,"Cazumba",2019
+"97","Coletivo",40,370,416,0,"Cazumba",2019
+"98","Coletivo",110,335,298,1,"Cazumba",2019
+"99","Coletivo",109,243,84,1,"Cazumba",2019
+"100","Coletivo",117,318,530,0,"Cazumba",2019
+"101","Coletivo",137,351,26,2,"Cazumba",2019
+"102","Coletivo",141,242,63,3,"Cazumba",2019
+"103","Coletivo",139,366,508,0,"Cazumba",2019
+"104","Coletivo",149,468,159,7,"Cazumba",2019
+"105","Coletivo",157,570,253,3,"Cazumba",2019
+"106","Coletivo",165,315,0,0,"Cazumba",2019
+"107","Coletivo",174,355,15,0,"Cazumba",2019
+"108","Coletivo",7,539,781,3,"Cazumba",2019
+"109","Coletivo",9,327,43,0,"Cazumba",2019
+"110","Coletivo",11,169,7,0,"Cazumba",2019
+"111","Coletivo",19,307,18,0,"Cazumba",2019
+"112","Coletivo",17,424,414,0,"Cazumba",2019
+"113","Coletivo",21,443,538,0,"Cazumba",2019
+"114","Coletivo",26,444,464,2,"Cazumba",2019
+"115","Coletivo",81,374,514,2,"Cazumba",2019
+"116","Coletivo",82,NA,NA,NA,"Cazumba",2019
+"117","Coletivo",92,305,229,2,"Cazumba",2019
+"118","Coletivo",89,526,216,6,"Cazumba",2019
+"119","Coletivo",118,463,180,0,"Cazumba",2019
+"120","Coletivo",119,241,107,2,"Cazumba",2019
+"121","Coletivo",120,347,193,0,"Cazumba",2019
+"122","Coletivo",175,632,121,0,"Cazumba",2019
+"123","Coletivo",186,510,621,0,"Cazumba",2019
+"124","Coletivo",182,490,102,8,"Cazumba",2019
+"125","Coletivo",180,442,643,1,"Cazumba",2019
+"126","Coletivo",192,458,623,35,"Cazumba",2019
+"127","Coletivo",198,281,184,3,"Cazumba",2019
+"128","Coletivo",199,540,811,1,"Cazumba",2019
+"129","Coletivo",85,410,506,0,"Cazumba",2019
+"130","Coletivo",211,443,0,0,"Cazumba",2019
+"131","Davi",285,NA,NA,NA,"Cazumba",2019
+"132","Davi",317,3,12,NA,"Cazumba",2019
+"133","Davi",312,4,302,NA,"Cazumba",2019
+"134","Davi",315,3,50,NA,"Cazumba",2019
+"135","Davi",308,3,55,1,"Cazumba",2019
+"136","Davi",361,4,313,3,"Cazumba",2019
+"137","Davi",359,2,85,NA,"Cazumba",2019
+"138","Davi",360,3,65,NA,"Cazumba",2019
+"139","Davi",354,4,173,NA,"Cazumba",2019
+"140","Davi",339,4,13,NA,"Cazumba",2019
+"141","Davi",290,6,453,25,"Cazumba",2019
+"142","Davi",297,5,35,2,"Cazumba",2019
+"143","Davi",327,6,259,NA,"Cazumba",2019
+"144","Davi",325,3,105,2,"Cazumba",2019
+"145","Davi",322,2,45,NA,"Cazumba",2019
+"146","Davi",320,5,114,NA,"Cazumba",2019
+"147","Davi",475,NA,NA,NA,"Cazumba",2019
+"148","Davi",476,NA,NA,NA,"Cazumba",2019
+"149","Davi",300,4,301,5,"Cazumba",2019
+"150","Dimar",590,NA,320,5,"Cazumba",2019
+"151","Dimar",595,NA,776,9,"Cazumba",2019
+"152","Dimar",598,NA,250,19,"Cazumba",2019
+"153","Irmaos Gamas",568,NA,110,27,"Cazumba",2019
+"154","Irmaos Gamas",569,NA,807,18,"Cazumba",2019
+"155","Irmaos Gamas",571,NA,92,11,"Cazumba",2019
+"156","Irmaos Gamas",573,NA,178,11,"Cazumba",2019
+"157","Irmaos Gamas",575,NA,212,38,"Cazumba",2019
+"158","Irmaos Gamas",581,NA,304,3,"Cazumba",2019
+"159","Irmaos Gamas",582,NA,75,2,"Cazumba",2019
+"160","Irmaos Gamas",587,NA,418,0,"Cazumba",2019
+"161","Mariazinha",230,3,49,0,"Cazumba",2019
+"162","Mariazinha",227,3,178,6,"Cazumba",2019
+"163","Mariazinha",217,2,72,11,"Cazumba",2019
+"164","Mariazinha",222,4,72,3,"Cazumba",2019
+"165","Mariazinha",245,4,363,14,"Cazumba",2019
+"166","Mariazinha",233,4,179,11,"Cazumba",2019
+"167","Mariazinha",241,2,142,4,"Cazumba",2019
+"168","Mariazinha",253,2,155,12,"Cazumba",2019
+"169","Mariazinha",273,6,290,0,"Cazumba",2019
+"170","Mariazinha",280,4,116,5,"Cazumba",2019
+"171","Mariazinha",265,2,142,4,"Cazumba",2019
+"172","Mariazinha",256,4,197,7,"Cazumba",2019
+"173","Mariazinha",251,5,222,11,"Cazumba",2019
+"174","Mariazinha",246,5,208,16,"Cazumba",2019
+"175","Marizan",600,NA,310,4,"Cazumba",2019
+"176","Marizan",601,NA,724,0,"Cazumba",2019
+"177","Marizan",603,NA,265,6,"Cazumba",2019
+"178","Marizan",606,NA,131,2,"Cazumba",2019
+"179","Marizan",609,NA,38,10,"Cazumba",2019
+"180","Zequinha",616,NA,85,5,"Cazumba",2019
+"181","Zequinha",621,NA,10,2,"Cazumba",2019
+"182","Zequinha",626,NA,452,0,"Cazumba",2019
+"183","Zequinha",627,NA,380,0,"Cazumba",2019
+"184","Zequinha",641,NA,31,0,"Cazumba",2019
+"185","Zequinha",673,NA,0,0,"Cazumba",2019
+"186","Zequinha",683,NA,50,100,"Cazumba",2019
+"187","Zequinha",687,NA,30,0,"Cazumba",2019
+"188","Zequinha",691,NA,190,0,"Cazumba",2019
+"189","Zequinha",714,NA,305,1,"Cazumba",2019
+"190","Zequinha",717,NA,430,0,"Cazumba",2019
+"191","Zequinha",723,NA,225,0,"Cazumba",2019
+"192","Zequinha",727,NA,129,1,"Cazumba",2019
+"193","Zequinha",729,NA,498,0,"Cazumba",2019
+"194","Zequinha",731,NA,198,0,"Cazumba",2019
+"195","Zequinha",733,NA,195,2,"Cazumba",2019
+"196","Zequinha",735,NA,298,1,"Cazumba",2019
+"197","Zequinha",738,NA,240,1,"Cazumba",2019
+"198","Zequinha",740,NA,325,1,"Cazumba",2019
+"199","Zequinha",741,NA,338,2,"Cazumba",2019
+"200","Zequinha",748,NA,130,0,"Cazumba",2019
+"201","Zequinha",751,NA,170,1,"Cazumba",2019
+"202","Zequinha",753,NA,315,1,"Cazumba",2019
+"203","Zequinha",763,NA,289,0,"Cazumba",2019
+"204","Zequinha",764,NA,288,0,"Cazumba",2019
+"205","Zirmao",415,274,150,6,"Cazumba",2019
+"206","Zirmao",423,663,380,16,"Cazumba",2019
+"207","Zirmao",432,447,605,25,"Cazumba",2019
+"208","Zirmao",436,533,170,13,"Cazumba",2019
+"209","Zirmao",438,186,0,0,"Cazumba",2019
+"210","Zirmao",437,223,268,10,"Cazumba",2019
+"211","Zirmao",447,290,418,17,"Cazumba",2019
+"212","Zirmao",450,473,457,17,"Cazumba",2019
+"213","Zirmao",453,419,506,22,"Cazumba",2019
+"214","Zirmao",460,253,103,3,"Cazumba",2019
+"215","Zirmao",461,346,163,0,"Cazumba",2019
+"216","Zirmao",467,393,180,10,"Cazumba",2019
+"217","Zirmao",475,393,93,11,"Cazumba",2019
+"218","Zirmao",476,502,213,16,"Cazumba",2019
+"219","Zirmao",478,391,298,14,"Cazumba",2019
+"220","Zirmao",481,477,320,15,"Cazumba",2019
+"221","Zirmao",497,172,51,3,"Cazumba",2019
+"222","Zirmao",405,2,54,2,"Cazumba",2019
+"223","Zirmao 2",767,NA,NA,NA,"Cazumba",2019
+"224","Zirmao 2",771,NA,80,6,"Cazumba",2019
+"225","Zirmao 2",778,NA,NA,NA,"Cazumba",2019
+"226","Zirmao 2",782,NA,317,9,"Cazumba",2019
+"227","Zirmao 2",783,NA,316,2,"Cazumba",2019
+"228","Zirmao 2",787,NA,20,26,"Cazumba",2019
+"229","Zirmao 2",795,NA,213,21,"Cazumba",2019
+"230","Zirmao 2",797,NA,168,31,"Cazumba",2019
+"231","Zirmao 2",798,NA,417,3,"Cazumba",2019
+"232","Zirmao 2",799,NA,398,4,"Cazumba",2019
+"233","Zirmao 2",807,NA,155,7,"Cazumba",2019
+"234","Zirmao 2",817,NA,180,13,"Cazumba",2019
+"235","Zirmao 2",827,NA,80,3,"Cazumba",2019
+"236","Zirmao 2",828,NA,273,8,"Cazumba",2019
+"237","Zirmao 2",841,NA,203,13,"Cazumba",2019
+"238","Zirmao 2",843,NA,135,3,"Cazumba",2019
+"239","Zirmao 2",859,NA,72,8,"Cazumba",2019
+"240","Zirmao 2",860,NA,NA,NA,"Cazumba",2019
+"241","Zirmao 2",867,NA,170,6,"Cazumba",2019
+"242","Zirmao 2",872,NA,41,0,"Cazumba",2019
+"243","Zirmao 2",876,NA,145,9,"Cazumba",2019
+"244","Zirmao 2",882,NA,483,19,"Cazumba",2019
+"245","Zirmão",415,2,248,10,"Cazumba",2020
+"246","Zirmão",423,6,256,23,"Cazumba",2020
+"247","Zirmão",432,4,830,5,"Cazumba",2020
+"248","Zirmão",436,5,120,7,"Cazumba",2020
+"249","Zirmão",438,1,4,2,"Cazumba",2020
+"250","Zirmão",437,2,81,8,"Cazumba",2020
+"251","Zirmão",447,2,157,1,"Cazumba",2020
+"252","Zirmão",450,4,506,10,"Cazumba",2020
+"253","Zirmão",453,4,360,13,"Cazumba",2020
+"254","Zirmão",460,2,60,10,"Cazumba",2020
+"255","Zirmão",461,3,280,16,"Cazumba",2020
+"256","Zirmão",467,3,254,7,"Cazumba",2020
+"257","Zirmão",475,3,204,3,"Cazumba",2020
+"258","Zirmão",476,5,220,8,"Cazumba",2020
+"259","Zirmão",478,3,320,15,"Cazumba",2020
+"260","Zirmão",481,4,310,25,"Cazumba",2020
+"261","Zirmão",497,1,133,6,"Cazumba",2020
+"262","Zirmão",405,2,180,3,"Cazumba",2020
+"263","Coletivo",57,NA,114,5,"Cazumba",2020
+"264","Coletivo",55,NA,0,0,"Cazumba",2020
+"265","Coletivo",54,NA,740,0,"Cazumba",2020
+"266","Coletivo",51,NA,119,2,"Cazumba",2020
+"267","Coletivo",46,NA,468,1,"Cazumba",2020
+"268","Coletivo",44,NA,408,3,"Cazumba",2020
+"269","Coletivo",43,NA,306,4,"Cazumba",2020
+"270","Coletivo",40,NA,648,6,"Cazumba",2020
+"271","Coletivo",110,NA,166,0,"Cazumba",2020
+"272","Coletivo",109,NA,61,0,"Cazumba",2020
+"273","Coletivo",117,NA,40,2,"Cazumba",2020
+"274","Coletivo",137,NA,41,1,"Cazumba",2020
+"275","Coletivo",141,NA,375,9,"Cazumba",2020
+"276","Coletivo",139,NA,18,0,"Cazumba",2020
+"277","Coletivo",149,NA,208,5,"Cazumba",2020
+"278","Coletivo",157,NA,309,0,"Cazumba",2020
+"279","Coletivo",165,NA,120,0,"Cazumba",2020
+"280","Coletivo",174,NA,5,8,"Cazumba",2020
+"281","Coletivo",7,NA,560,2,"Cazumba",2020
+"282","Coletivo",9,NA,108,4,"Cazumba",2020
+"283","Coletivo",11,NA,65,0,"Cazumba",2020
+"284","Coletivo",19,NA,1,0,"Cazumba",2020
+"285","Coletivo",17,NA,177,0,"Cazumba",2020
+"286","Coletivo",21,NA,305,4,"Cazumba",2020
+"287","Coletivo",26,NA,501,8,"Cazumba",2020
+"288","Coletivo",81,NA,260,0,"Cazumba",2020
+"289","Coletivo",85,NA,710,0,"Cazumba",2020
+"290","Coletivo",92,NA,248,11,"Cazumba",2020
+"291","Coletivo",89,NA,370,11,"Cazumba",2020
+"292","Coletivo",118,NA,95,0,"Cazumba",2020
+"293","Coletivo",119,NA,200,0,"Cazumba",2020
+"294","Coletivo",120,NA,100,4,"Cazumba",2020
+"295","Coletivo",175,NA,216,6,"Cazumba",2020
+"296","Coletivo",186,NA,330,12,"Cazumba",2020
+"297","Coletivo",182,NA,37,0,"Cazumba",2020
+"298","Coletivo",180,NA,420,8,"Cazumba",2020
+"299","Coletivo",192,NA,882,15,"Cazumba",2020
+"300","Coletivo",198,NA,127,0,"Cazumba",2020
+"301","Coletivo",199,NA,1220,16,"Cazumba",2020
+"302","Coletivo",211,NA,40,0,"Cazumba",2020
+"303","Davi",285,NA,NA,NA,"Cazumba",2020
+"304","Davi",317,NA,9,2,"Cazumba",2020
+"305","Davi",312,NA,55,1,"Cazumba",2020
+"306","Davi",315,NA,30,1,"Cazumba",2020
+"307","Davi",308,NA,30,0,"Cazumba",2020
+"308","Davi",361,NA,630,12,"Cazumba",2020
+"309","Davi",359,NA,30,3,"Cazumba",2020
+"310","Davi",360,NA,94,0,"Cazumba",2020
+"311","Davi",354,NA,246,5,"Cazumba",2020
+"312","Davi",339,NA,11,1,"Cazumba",2020
+"313","Davi",290,NA,63,9,"Cazumba",2020
+"314","Davi",297,NA,29,0,"Cazumba",2020
+"315","Davi",327,NA,378,0,"Cazumba",2020
+"316","Davi",325,NA,174,9,"Cazumba",2020
+"317","Davi",322,NA,37,0,"Cazumba",2020
+"318","Davi",320,NA,214,10,"Cazumba",2020
+"319","Davi",475,NA,NA,NA,"Cazumba",2020
+"320","Davi",476,NA,NA,NA,"Cazumba",2020
+"321","Davi",300,NA,343,3,"Cazumba",2020
+"322","Mariazinha",230,3,306,0,"Cazumba",2020
+"323","Mariazinha",227,3,273,4,"Cazumba",2020
+"324","Mariazinha",217,2,230,10,"Cazumba",2020
+"325","Mariazinha",222,4,411,0,"Cazumba",2020
+"326","Mariazinha",245,4,617,4,"Cazumba",2020
+"327","Mariazinha",233,4,66,4,"Cazumba",2020
+"328","Mariazinha",241,2,74,0,"Cazumba",2020
+"329","Mariazinha",253,2,51,3,"Cazumba",2020
+"330","Mariazinha",273,6,99,6,"Cazumba",2020
+"331","Mariazinha",280,4,116,13,"Cazumba",2020
+"332","Mariazinha",265,2,79,5,"Cazumba",2020
+"333","Mariazinha",256,4,86,3,"Cazumba",2020
+"334","Mariazinha",251,5,452,2,"Cazumba",2020
+"335","Mariazinha",246,5,334,5,"Cazumba",2020
+"336","Zequinha",616,NA,30,0,"Cazumba",2020
+"337","Zequinha",621,NA,150,2,"Cazumba",2020
+"338","Zequinha",626,NA,40,3,"Cazumba",2020
+"339","Zequinha",627,NA,804,4,"Cazumba",2020
+"340","Zequinha",641,NA,180,5,"Cazumba",2020
+"341","Zequinha",673,NA,0,0,"Cazumba",2020
+"342","Zequinha",683,NA,915,3,"Cazumba",2020
+"343","Zequinha",687,NA,39,0,"Cazumba",2020
+"344","Zequinha",691,NA,298,2,"Cazumba",2020
+"345","Zequinha",714,NA,433,6,"Cazumba",2020
+"346","Zequinha",717,NA,456,5,"Cazumba",2020
+"347","Zequinha",723,NA,300,4,"Cazumba",2020
+"348","Zequinha",727,NA,27,1,"Cazumba",2020
+"349","Zequinha",729,NA,890,6,"Cazumba",2020
+"350","Zequinha",731,NA,80,3,"Cazumba",2020
+"351","Zequinha",733,NA,45,0,"Cazumba",2020
+"352","Zequinha",735,NA,489,6,"Cazumba",2020
+"353","Zequinha",738,NA,250,8,"Cazumba",2020
+"354","Zequinha",740,NA,100,5,"Cazumba",2020
+"355","Zequinha",741,NA,850,7,"Cazumba",2020
+"356","Zequinha",748,NA,299,4,"Cazumba",2020
+"357","Zequinha",751,NA,200,5,"Cazumba",2020
+"358","Zequinha",753,NA,310,2,"Cazumba",2020
+"359","Zequinha",763,NA,359,3,"Cazumba",2020
+"360","Zequinha",764,NA,50,1,"Cazumba",2020
+"361","Zirmão 2",767,3,0,0,"Cazumba",2020
+"362","Zirmão 2",771,3,77,1,"Cazumba",2020
+"363","Zirmão 2",778,3,12,0,"Cazumba",2020
+"364","Zirmão 2",782,4,582,5,"Cazumba",2020
+"365","Zirmão 2",783,3,284,0,"Cazumba",2020
+"366","Zirmão 2",787,4,25,0,"Cazumba",2020
+"367","Zirmão 2",795,3,218,15,"Cazumba",2020
+"368","Zirmão 2",797,6,152,0,"Cazumba",2020
+"369","Zirmão 2",798,3,620,16,"Cazumba",2020
+"370","Zirmão 2",799,3,340,15,"Cazumba",2020
+"371","Zirmão 2",807,4,180,5,"Cazumba",2020
+"372","Zirmão 2",817,5,173,8,"Cazumba",2020
+"373","Zirmão 2",827,0,9,0,"Cazumba",2020
+"374","Zirmão 2",828,2,205,23,"Cazumba",2020
+"375","Zirmão 2",841,2,44,0,"Cazumba",2020
+"376","Zirmão 2",843,3,13,0,"Cazumba",2020
+"377","Zirmão 2",859,5,43,1,"Cazumba",2020
+"378","Zirmão 2",860,3,3,0,"Cazumba",2020
+"379","Zirmão 2",867,5,110,8,"Cazumba",2020
+"380","Zirmão 2",872,3,96,10,"Cazumba",2020
+"381","Zirmão 2",876,3,320,17,"Cazumba",2020
+"382","Zirmão 2",882,3,385,8,"Cazumba",2020
+"383","Irmãos Gamas",568,NA,45,6,"Cazumba",2020
+"384","Irmãos Gamas",569,NA,736,4,"Cazumba",2020
+"385","Irmãos Gamas",571,NA,32,8,"Cazumba",2020
+"386","Irmãos Gamas",573,NA,140,2,"Cazumba",2020
+"387","Irmãos Gamas",575,NA,217,4,"Cazumba",2020
+"388","Irmãos Gamas",581,NA,413,2,"Cazumba",2020
+"389","Irmãos Gamas",582,NA,100,0,"Cazumba",2020
+"390","Irmãos Gamas",587,NA,376,5,"Cazumba",2020
+"391","Dimar",590,NA,692,4,"Cazumba",2020
+"392","Dimar",595,NA,673,3,"Cazumba",2020
+"393","Dimar",598,NA,109,NA,"Cazumba",2020
+"394","Marizan",600,NA,223,1,"Cazumba",2020
+"395","Marizan",601,NA,345,4,"Cazumba",2020
+"396","Marizan",603,NA,300,0,"Cazumba",2020
+"397","Marizan",606,NA,137,0,"Cazumba",2020
+"398","Marizan",609,NA,14,15,"Cazumba",2020
+"399","Zirmão",415,NA,129,11,"Cazumba",2021
+"400","Zirmão",423,NA,167,3,"Cazumba",2021
+"401","Zirmão",432,NA,321,0,"Cazumba",2021
+"402","Zirmão",436,NA,272,3,"Cazumba",2021
+"403","Zirmão",438,NA,4,1,"Cazumba",2021
+"404","Zirmão",437,NA,216,12,"Cazumba",2021
+"405","Zirmão",447,NA,393,0,"Cazumba",2021
+"406","Zirmão",450,NA,413,0,"Cazumba",2021
+"407","Zirmão",453,NA,341,0,"Cazumba",2021
+"408","Zirmão",460,NA,192,2,"Cazumba",2021
+"409","Zirmão",461,NA,304,1,"Cazumba",2021
+"410","Zirmão",467,NA,293,11,"Cazumba",2021
+"411","Zirmão",475,NA,138,3,"Cazumba",2021
+"412","Zirmão",476,NA,135,13,"Cazumba",2021
+"413","Zirmão",478,NA,130,6,"Cazumba",2021
+"414","Zirmão",481,NA,396,7,"Cazumba",2021
+"415","Zirmão",497,NA,15,0,"Cazumba",2021
+"416","Zirmão",405,NA,102,0,"Cazumba",2021
+"417","Coletivo",57,NA,166,0,"Cazumba",2021
+"418","Coletivo",55,NA,16,0,"Cazumba",2021
+"419","Coletivo",54,NA,64,2,"Cazumba",2021
+"420","Coletivo",51,NA,113,0,"Cazumba",2021
+"421","Coletivo",46,NA,366,0,"Cazumba",2021
+"422","Coletivo",44,NA,80,0,"Cazumba",2021
+"423","Coletivo",43,NA,280,7,"Cazumba",2021
+"424","Coletivo",40,NA,760,0,"Cazumba",2021
+"425","Coletivo",110,NA,169,5,"Cazumba",2021
+"426","Coletivo",109,NA,92,0,"Cazumba",2021
+"427","Coletivo",117,NA,332,2,"Cazumba",2021
+"428","Coletivo",137,NA,20,0,"Cazumba",2021
+"429","Coletivo",141,NA,29,10,"Cazumba",2021
+"430","Coletivo",139,NA,80,0,"Cazumba",2021
+"431","Coletivo",149,NA,211,8,"Cazumba",2021
+"432","Coletivo",157,NA,160,0,"Cazumba",2021
+"433","Coletivo",165,NA,448,14,"Cazumba",2021
+"434","Coletivo",174,NA,268,10,"Cazumba",2021
+"435","Coletivo",7,NA,572,10,"Cazumba",2021
+"436","Coletivo",9,NA,120,0,"Cazumba",2021
+"437","Coletivo",11,NA,24,4,"Cazumba",2021
+"438","Coletivo",19,NA,126,3,"Cazumba",2021
+"439","Coletivo",17,NA,242,8,"Cazumba",2021
+"440","Coletivo",21,NA,80,0,"Cazumba",2021
+"441","Coletivo",26,NA,214,6,"Cazumba",2021
+"442","Coletivo",81,NA,47,0,"Cazumba",2021
+"443","Coletivo",85,NA,138,11,"Cazumba",2021
+"444","Coletivo",92,NA,258,11,"Cazumba",2021
+"445","Coletivo",89,NA,100,0,"Cazumba",2021
+"446","Coletivo",118,NA,118,2,"Cazumba",2021
+"447","Coletivo",119,NA,92,0,"Cazumba",2021
+"448","Coletivo",120,NA,150,0,"Cazumba",2021
+"449","Coletivo",175,NA,312,8,"Cazumba",2021
+"450","Coletivo",186,NA,0,0,"Cazumba",2021
+"451","Coletivo",182,NA,220,0,"Cazumba",2021
+"452","Coletivo",180,NA,331,1,"Cazumba",2021
+"453","Coletivo",192,NA,560,20,"Cazumba",2021
+"454","Coletivo",198,NA,0,0,"Cazumba",2021
+"455","Coletivo",199,NA,0,0,"Cazumba",2021
+"456","Coletivo",211,NA,12,0,"Cazumba",2021
+"457","Davi",317,NA,75,2,"Cazumba",2021
+"458","Davi",312,NA,267,10,"Cazumba",2021
+"459","Davi",315,NA,96,4,"Cazumba",2021
+"460","Davi",308,NA,7,1,"Cazumba",2021
+"461","Davi",361,NA,537,7,"Cazumba",2021
+"462","Davi",359,NA,35,2,"Cazumba",2021
+"463","Davi",360,NA,101,0,"Cazumba",2021
+"464","Davi",354,NA,222,5,"Cazumba",2021
+"465","Davi",339,NA,131,0,"Cazumba",2021
+"466","Davi",290,NA,184,15,"Cazumba",2021
+"467","Davi",297,NA,10,3,"Cazumba",2021
+"468","Davi",327,NA,457,3,"Cazumba",2021
+"469","Davi",325,NA,29,3,"Cazumba",2021
+"470","Davi",322,NA,87,4,"Cazumba",2021
+"471","Davi",320,NA,134,7,"Cazumba",2021
+"472","Davi",304,NA,NA,NA,"Cazumba",2021
+"473","Davi",326,NA,350,10,"Cazumba",2021
+"474","Davi",300,NA,186,6,"Cazumba",2021
+"475","Mariazinha",230,NA,22,0,"Cazumba",2021
+"476","Mariazinha",227,NA,185,1,"Cazumba",2021
+"477","Mariazinha",217,NA,323,3,"Cazumba",2021
+"478","Mariazinha",222,NA,106,2,"Cazumba",2021
+"479","Mariazinha",245,NA,337,2,"Cazumba",2021
+"480","Mariazinha",233,NA,98,3,"Cazumba",2021
+"481","Mariazinha",241,NA,38,2,"Cazumba",2021
+"482","Mariazinha",253,NA,98,0,"Cazumba",2021
+"483","Mariazinha",273,NA,41,0,"Cazumba",2021
+"484","Mariazinha",280,NA,231,7,"Cazumba",2021
+"485","Mariazinha",265,NA,178,1,"Cazumba",2021
+"486","Mariazinha",256,NA,45,2,"Cazumba",2021
+"487","Mariazinha",251,NA,175,5,"Cazumba",2021
+"488","Mariazinha",246,NA,731,0,"Cazumba",2021
+"489","Zequinha",616,NA,0,0,"Cazumba",2021
+"490","Zequinha",621,NA,185,0,"Cazumba",2021
+"491","Zequinha",626,NA,85,0,"Cazumba",2021
+"492","Zequinha",627,NA,70,0,"Cazumba",2021
+"493","Zequinha",641,NA,311,0,"Cazumba",2021
+"494","Zequinha",673,NA,163,0,"Cazumba",2021
+"495","Zequinha",683,NA,220,0,"Cazumba",2021
+"496","Zequinha",687,NA,360,0,"Cazumba",2021
+"497","Zequinha",691,NA,90,0,"Cazumba",2021
+"498","Zequinha",714,NA,0,0,"Cazumba",2021
+"499","Zequinha",717,NA,64,0,"Cazumba",2021
+"500","Zequinha",723,NA,85,0,"Cazumba",2021
+"501","Zequinha",727,NA,229,0,"Cazumba",2021
+"502","Zequinha",729,NA,68,0,"Cazumba",2021
+"503","Zequinha",731,NA,551,0,"Cazumba",2021
+"504","Zequinha",733,NA,161,0,"Cazumba",2021
+"505","Zequinha",735,NA,230,0,"Cazumba",2021
+"506","Zequinha",738,NA,240,0,"Cazumba",2021
+"507","Zequinha",740,NA,321,0,"Cazumba",2021
+"508","Zequinha",741,NA,338,0,"Cazumba",2021
+"509","Zequinha",748,NA,261,0,"Cazumba",2021
+"510","Zequinha",751,NA,320,0,"Cazumba",2021
+"511","Zequinha",753,NA,450,0,"Cazumba",2021
+"512","Zequinha",763,NA,148,0,"Cazumba",2021
+"513","Zequinha",764,NA,128,0,"Cazumba",2021
+"514","Zirmão 2",767,NA,0,0,"Cazumba",2021
+"515","Zirmão 2",771,NA,86,11,"Cazumba",2021
+"516","Zirmão 2",778,NA,12,0,"Cazumba",2021
+"517","Zirmão 2",782,NA,660,7,"Cazumba",2021
+"518","Zirmão 2",783,NA,304,2,"Cazumba",2021
+"519","Zirmão 2",787,NA,32,0,"Cazumba",2021
+"520","Zirmão 2",795,NA,134,2,"Cazumba",2021
+"521","Zirmão 2",797,NA,203,2,"Cazumba",2021
+"522","Zirmão 2",798,NA,325,2,"Cazumba",2021
+"523","Zirmão 2",799,NA,321,5,"Cazumba",2021
+"524","Zirmão 2",807,NA,297,8,"Cazumba",2021
+"525","Zirmão 2",817,NA,258,0,"Cazumba",2021
+"526","Zirmão 2",827,NA,76,0,"Cazumba",2021
+"527","Zirmão 2",828,NA,313,1,"Cazumba",2021
+"528","Zirmão 2",841,NA,167,2,"Cazumba",2021
+"529","Zirmão 2",843,NA,110,0,"Cazumba",2021
+"530","Zirmão 2",859,NA,136,2,"Cazumba",2021
+"531","Zirmão 2",860,NA,12,0,"Cazumba",2021
+"532","Zirmão 2",867,NA,44,2,"Cazumba",2021
+"533","Zirmão 2",872,NA,175,2,"Cazumba",2021
+"534","Zirmão 2",876,NA,375,5,"Cazumba",2021
+"535","Zirmão 2",882,NA,317,0,"Cazumba",2021
+"536","Irmãos Gamas",568,NA,240,10,"Cazumba",2021
+"537","Irmãos Gamas",569,NA,554,4,"Cazumba",2021
+"538","Irmãos Gamas",571,NA,68,11,"Cazumba",2021
+"539","Irmãos Gamas",573,NA,372,11,"Cazumba",2021
+"540","Irmãos Gamas",575,NA,226,15,"Cazumba",2021
+"541","Irmãos Gamas",581,NA,254,6,"Cazumba",2021
+"542","Irmãos Gamas",582,NA,81,7,"Cazumba",2021
+"543","Irmãos Gamas",587,NA,304,13,"Cazumba",2021
+"544","Dimar",590,NA,212,5,"Cazumba",2021
+"545","Dimar",595,NA,624,2,"Cazumba",2021
+"546","Dimar",598,NA,356,6,"Cazumba",2021
+"547","Marizan",600,NA,113,8,"Cazumba",2021
+"548","Marizan",601,NA,415,20,"Cazumba",2021
+"549","Marizan",603,NA,122,10,"Cazumba",2021
+"550","Marizan",606,NA,180,10,"Cazumba",2021
+"551","Marizan",609,NA,75,5,"Cazumba",2021
+"552","Dimar",NA,NA,NA,NA,"Cazumba",2018
+"553","Irmãos Gamas",NA,NA,NA,NA,"Cazumba",2018
+"554","Marizan",NA,NA,NA,NA,"Cazumba",2018
+"555","Zequinha",NA,NA,NA,NA,"Cazumba",2018
+"556","Zirmão 2",NA,NA,NA,NA,"Cazumba",2018
