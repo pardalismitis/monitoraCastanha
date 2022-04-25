@@ -178,7 +178,31 @@ producaoTamanhoAgregada = summarise(
 )
 ```
 
+#### Exportar arquivos
+
+-   Produção por castanhal
+
+```{r}
+#producaoCastanhalAgregada = as.data.frame(producaoCastanhalAgregada)
+write.csv(producaoCastanhalAgregada, here("output", "producaoCastanhalAgregada.csv"))
+```
+
+-   Produção por classe de tamanho
+
+```{r}
+#producaoCastanhalAgregada = as.data.frame(producaoCastanhalAgregada)
+write.csv(producaoTamanhoAgregada, here("output", "producaoTamanhoAgregada.csv"))
+```
+
 ### Gráfico de Produção x Ano x Castanhal
+
+```{r}
+producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
+                                   producaoClasseAgregada$tamanho,
+                                   producaoClasseAgregada$Ano)
+producaototal = as.data.frame(producaototal)
+write.csv(producaototal, here("output", "producaoTotal.csv"))
+```
 
 ```{r}
 ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
@@ -253,6 +277,15 @@ producao2019 <- subset(producaoClasse, Ano == 2019)
 #agrupar dados
 producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
 ```
+
+#### Exportar arquivo
+
+-   Número de castanheiras x Classes de tamanho
+
+```{r}
+write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
+```
+
 
 ```{r}
 #ordenar as classes de tamanho em ordem crescente
