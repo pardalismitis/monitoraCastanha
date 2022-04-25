@@ -46,13 +46,17 @@ names(sementesCazumba)[names(sementesCazumba) ==
 ```
 
 Unir dados de produção e sementes com dados de mapeamento.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
 ```{r}
 producaoClasse <- merge(producaoCazumba,
                         mapeamento,
                         by = "n_da_castanheira",
                         all.x = TRUE
                         )
+<<<<<<< HEAD
 
 sementesClasse <- merge(sementesCazumba,
                         mapeamento,
@@ -62,10 +66,22 @@ sementesClasse <- merge(sementesCazumba,
 ```
 
 Converter quilos para gramas.
+=======
 
+sementesClasse <- merge(sementesCazumba,
+                        mapeamento,
+                        by = "n_da_castanheira",
+                        all.x = TRUE
+                        )
+```
+>>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
+
+Converter quilos para gramas.
 ```{r}
 sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_gr <- sementesClasse$Peso_total_das_sementes_dos_10.frutos_ouricos_Kg/1000
 ```
+
+
 
 ```{r}
 sementesClasseSoma = group_by(sementesClasse, Castanhal, tamanho, Ano)
@@ -93,6 +109,10 @@ sementesClasseAgregada$id <- paste(sementesClasseAgregada$Castanhal,
                                    sementesClasseAgregada$Ano)
 ```
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
 ```{r}
 producaoClasseSoma = group_by(producaoClasse, Castanhal, tamanho, Ano )
 
@@ -102,11 +122,228 @@ producaoClasseAgregada = summarise(
         n_frutos_ouricos_produzidos,
         na.rm = TRUE
     )
+<<<<<<< HEAD
 )
 
 producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
                                    producaoClasseAgregada$tamanho,
                                    producaoClasseAgregada$Ano)
+=======
+)
+
+producaoClasseAgregada$id <- paste(producaoClasseAgregada$Castanhal,
+                                   producaoClasseAgregada$tamanho,
+                                   producaoClasseAgregada$Ano)
+```
+
+
+```{r}
+
+producaototal = merge(producaoClasseAgregada,
+                      sementesClasseAgregada,
+                      by = "id",
+                      all.x = TRUE)
+
+producaototal$producaoTotal = producaototal$total_frutos*
+  producaototal$media_sementes*
+  producaototal$peso_semente
+
+```
+
+```{r}
+producaototal = as.data.frame(producaototal)
+write.csv(producaototal, here("output", "producaoTotal.csv"))
+```
+
+```{r}
+producaoCastanhal = group_by(producaototal, Castanhal.x, Ano.x )
+
+producaoCastanhalAgregada = summarise(
+    producaoCastanhal,
+    total = sum(
+        producaoTotal,
+        na.rm = TRUE
+    )
+)
+
+producaoTamanho = group_by(producaototal, tamanho.x, Castanhal.x )
+
+producaoTamanhoAgregada = summarise(
+    producaoTamanho,
+    total = sum(
+        producaoTotal,
+        na.rm = TRUE
+    )
+)
+
+```
+
+
+```{r}
+ggplot(producaoCastanhalAgregada, aes(x=factor(Ano.x), y=total))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  geom_text(
+    aes(label= as.integer(round(total, 0))),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,1750)+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal.x))+
+  
+  xlab("CASTANHAL")+
+  
+  ylab("PRODUÇÃO (Kg)")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+
+```
+
+```{r}
+
+producaoTamanhoAgregada$tamanho.x <- factor(producaoTamanhoAgregada$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+
+
+ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.x), y=total))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  geom_text(
+    aes(label= as.integer(round(total, 0))),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,2000)+
+  
+  theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal.x))+
+  
+  xlab("TAMANHO")+
+  
+  ylab("PRODUÇÃO (Kg)")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+
+```
+
+```{r}
+producaototal$tamanho.x <- factor(producaototal$tamanho.x,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+
+
+ggplot(subset(producaototal, !is.na(tamanho.x)), aes(x=tamanho.x))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    #stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+ # geom_text(
+  #  aes(label= as.integer(round(total, 0))),
+   # size = 3,
+    #vjust = -0.5
+    #)+
+  
+  #ylim(0,1750)+
+  
+  #theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal.x))+
+  
+  xlab("CASTANHAL")+
+  
+  ylab("PRODUÇÃO (Kg)")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+
+```
+
+```{r}
+producao2019 <- subset(producaoClasse, Ano == 2019)
+producaoCastanheira <- producao2019 %>% group_by(tamanho, Castanhal) %>%count()
+
+```
+
+
+```{r}
+
+producaoCastanheira$tamanho <- factor(producaoCastanheira$tamanho,levels = c("jovem", "jovem-adulto", "adulto", "adulto-senescente", "senescente"))
+
+
+ggplot(subset(producaoCastanheira, !is.na(tamanho)), aes(x=tamanho, y=n))+
+  geom_bar(
+    position = position_dodge2(preserve ="single"),
+    stat="identity",
+    width = 0.5,
+    size =0.3,
+    fill = "blue"
+    )+
+  geom_text(
+    aes(label= as.integer(round(n, 0))),
+    size = 3,
+    vjust = -0.5
+    )+
+  
+  ylim(0,25)+
+  
+  #theme_bw()+
+  
+  facet_wrap(facets = vars(Castanhal))+
+  
+  xlab("CLASSE DE TAMANHO")+
+  
+  ylab("NÚMERO DE CASTANHEIRAS")+
+  
+  theme(legend.position="top")+
+  
+  theme(axis.text.x = element_text(
+    angle=45,
+    vjust=1,
+    hjust = 1,
+    colour="black",
+    size=rel(1))
+    )
+
+>>>>>>> 1b82a748ee9b07d9bb51e6cfd6c513438bce7e64
 ```
 
 ```{r}
