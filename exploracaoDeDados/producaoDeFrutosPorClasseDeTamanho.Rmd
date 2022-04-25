@@ -305,7 +305,6 @@ numeroDeCastanheiras <- castanheiras01 %>% group_by(tamanho, nomeCastanhal) %>%c
 #    total = sum(n)
 #)
 
-
 numeroDeCastanheiras$nomeCastanhal <- gsub("coletivo","Coletivo",
                              gsub("davi","Davi",
                              gsub("dima", "Dima",
