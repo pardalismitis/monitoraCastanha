@@ -1,43 +1,135 @@
-ID,Representante,UC,producao_total,tipo,Total_kg_produzido,Temp_chegar_castanhal_dias,Temp_chegar_castanhal_hor,Temp_chegar_castanhal_min,Tempo_total,transporte_Fluvial_ida,Transporte_terrestre_ida,Dias_trabalhando,Custo,Valor_diaria,Horas_trabalhadas_por_dia,Custos_Alimentacao,Transporte_producao_pe,Transporte_producao_moto,Transporte_producao_carro,Transporte_producao_rabeta,Transporte_producao_voadeira,Transporte_producao_animal,Transporte_producao_frete,Gasto_combus_frete,Gasto_manutencao,Gasto_diaria,Insumos,Insumos_gastos,EPI_tipo,EPI_gastos,Gastos_total,Subsidio,Subsisio_quem
-1,Raimundo_Nonato_Nascimento_Coco,Cautario,15,Barrica,1080,0,3,0,180,1,,,,,,400,,1,,1,,,,50,430,50,"Saco,_faco_e_barbante",400,Botas,60,1390,Sim,Pacto_das_aguas
-2,Raimundo_Nonato_Nascimento_Coco,Cautario,6,Lata,72,0,8,0,480,1,,,,,,800,1,,,1,,,,40,0,0,,0,,150,990,Nao,
-3,Francisco_Galego,Cautario,10,Barrica,720,0,0,20,20,0,1,,,,,500,,1,,,,,,250,0,0,Saco_e_barbante,0,Botas_e_luvas,100,850,Sim,Pacto_das_aguas
-4,Francisco_Galego,Cautario,9,Barrica,648,0,4,0,240,1,1,,,,,600,,,,1,,,,320,400,0,Faco_e_lima,0,Específico_pessoa,0,1320,Sim,Pacto_das_aguas
-5,Jonas,Cautario,114,Lata,1368,0,1,10,70,0,1,,,,,500,,1,,,,,,125,250,300,,0,Bota,30,1205,Sim,Pacto_das_aguas
-6,Francilene_de_Souza_,Cautario,2,Lata,24,0,0,20,20,0,1,,,,,0,,1,,,,,,10,0,0,,0,,0,10,Sim,Pacto_das_aguas
-7,Edelson_Braz,Cautario,14,Lata,168,0,0,40,40,0,1,,,,,300,,1,,,,,,155,195,0,"Saco,_faco_e_barbante",85,Botas_e_luvas,67,802,Nao,
-8,Rosilene,Cautario,,Lata,,0,0,0,0,0,,,,,,0,,,,,,,,0,0,0,,0,,0,,Nao,
-9,Lucimar_Lopes,Cautario,60,Saca,2880,0,0,40,40,0,1,,,,,800,,1,,,,,,400,200,0,,0,Botas,120,1520,Sim,Pacto_das_aguas
-10,Stephanie,Cautario,4,Saca,192,0,0,30,30,1,1,,,,,300,,,1,,1,,,500,350,100,,0,,0,1250,Nao,
-11,Leo_Marques,Cautario,2,Barrica,144,0,0,5,5,0,1,,,,,300,,1,,,,,,100,300,150,Faco_e_sacos,100,Botas_e_luvas,80,1030,Sim,Pacto_das_aguas
-12,Daiane_Alves,Cautario,15,Saca,720,0,0,30,30,0,1,,,,,20,1,1,,,,,,75,50,0,,0,Bota_e_calcas,60,205,Sim,Pacto_das_aguas
-13,Daiane_Alves,Cautario,40,Saca,1920,0,1,0,60,1,,,,,,400,,,,1,,,,160,50,480,,0,Bota_e_calcas,0,1090,Sim,Pacto_das_aguas
-14,Maria_Batista_de_Souza_(Dona_Deise),ROP,110,Lata,1320,,,4,4,,1,,,,,800,1,,,,,,,400,1200,150,,,,,2550,Sim,Pacto_das_aguas
-15,Maria_Batista_de_Souza_(Dona_Deise),ROP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-16,Maria_Batista_de_Souza_(Dona_Deise),ROP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-17,Maria_Batista_de_Souza_(Dona_Deise),ROP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-18,Maria_Batista_de_Souza_(Dona_Deise),ROP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-19,Francisco_da_Rocha_(Xodo),ROP,60,Lata,720,,1,,60,1,1,,,,,300,1,,,1,,,1,550,,,,,,,850,Nao,
-20,Paulo_Silva_da_Costa,ROP,6,Lata,72,,,35,35,1,1,,,,,150,1,,1,1,,,,550,60,,,,Botina,45,805,Sim,Pacto_das_aguas
-21,Angelica_C._dos_Santos,ROP,16,Lata,192,3,,,4320,1,1,,,,,1500,,,,1,,,1,600,300,,"Facao,_insumos,_sacaria",300,,,2700,Sim,Pacto_das_aguas
-22,Manoel_Albino,ROP,108,Lata,1296,,,5,5,,1,,,,,532,1,,,,,,,0,0,,"Facao,_lima,_saco,_barbante",350,"Botina,_calca",130,1012,Nao,
-23,Angelica_C._dos_Santos,ROP,9,Lata,108,3,,,4320,,1,,,,,1000,,,1,,,,,600,250,,"Facao,_barbante,_sacaria",300,,,2150,Sim,Pacto_das_aguas
-24,Francisco_Souza,Lago_Cuina,13,Lata,156,,,3,3,,1,,,,,0,1,,,,,,,,,,Saco_e_facao,200,,,200,Nao,
-25,Rusevalter,Lago_Cuina,50,Lata,600,,2,,120,1,,,,,,50,,,,1,,,,40,200,,Saco_e_facao,200,"Botas,_Luvas_e_pilhas",150,640,Nao,
-26,Vanilde_Edson,Lago_Cuina,50,Lata,600,,1,,60,1,1,,,,,50,,,,1,,,,32,,,Facao_saco_e_barbante,75,"Botas,_luvas_e_bones",85,242,Nao,
-27,Ademilton,Lago_Cuina,20,Lata,240,,1,,60,1,1,,,,,300,,,,1,,,,75,,,Facao,50,Luvas,10,435,Sim,
-28,Ademilton,Lago_Cuina,5,Lata,60,,1,30,90,1,1,,,,,300,,,,1,,,,100,,,Facao,0,Luvas,0,400,Sim,
-29,Tito_Gonçalves_Neves,Lago_Cuina,100,Saca,4800,,,30,30,1,1,,,,,,,,,1,,,,10,,,Facao_e_barbante,200,Botas_e_luvas,300,510,Nao,
-30,Alessandra_de_Souza_Santos,Lago_Cuina,5,Lata,60,,1,,60,1,1,,,,,150,1,,,1,,,,40,,,Sacos,1.5,Luvas,15,206.5,Nao,
-31,Levi_Neves,Lago_Cuina,8,Lata,96,,2,,120,1,1,,,,,150,1,1,,1,,,,50,,,Sacos,2,Botas_e_luvas,150,352,Nao,
-32,Domingos_Braga,Lago_Cuina,391,Lata,4692,,,20,20,1,,,,,,150,,,,1,,,,100,,,Barbante_sacos_e_facao,218,"Botas,_luvas_e_repelente",70,538,Nao,
-33,Maria_Vanete_Leite,Lago_Cuina,55,Lata,660,,,5,5,,1,,,,,0,1,,,,,,,0,,,Barbante_sacos_e_facao,141,"Botas,_luvas_e_repelente",140,281,Nao,
-34,Nenzinho,Cazumba,162,Lata,1944,,,30,30,1,,9,,,,200,,1,,,,,1,100,0,2950,40_sacos,200,,0,3450,Nao,
-35,Manoel_Maia,Cazumba,84,Saca,4032,,1,,60,1,,6,,,,900,,,,,,,1,0,250,0,"90_sacos,_01_rolo_de_barbante_e_facão",280,Bota_7_léguas,55,1485,Nao,
-36,Manoel_Maia,Cazumba,60,Saca,2880,,,30,30,1,,4.5,,,,600,,,,,,,1,0,250,0,70_sacos,210,Bota_7_léguas,55,1115,Nao,
-37,Charliudo,Cazumba,500,Lata,6000,,,15,15,1,,18,,,,350,,1,1,,,,,49.5,0,900,50_sacos,300,6_botas_7_léguas,270,1869.5,Nao,
-38,Charles,Cazumba,545,Lata,6540,,,45,45,1,,6,,,,1600,,1,,1,,,,68,0,0,120_sacos,360,,0,2028,Nao,
-39,Davi,Cazumba,180,Lata,2160,,,40,40,1,,20,,,,1000,,,,1,,,,80,0,210,40_sacos,140,,0,1430,Nao,
-40,Marizam,Cazumba,60,Lata,720,,5,,300,,1,4,,,,150,,,,1,,,,100,0,280,20_sacos,60,2_botas_7_léguas,70,660,Nao,
-41,Chico_Preto,Cazumba,95,Lata,1140,,5,,300,,1,4,,,,200,,,,1,,,,300,0,210,18_sacos,54,,0,764,Nao,
-42,Dimar,Cazumba,45,Lata,540,,7,,420,,1,3,,,,100,,,,,,,,200,0,100,12_sacos_e_1_facão,62,,0,462,Nao,
+ID;ANO;Representante;nomeCastanhal;UC;producao_total;tipo;Total_kg_produzido;Temp_chegar_castanhal_dias;Temp_chegar_castanhal_hor;Temp_chegar_castanhal_min;Tempo_total;transporte_Fluvial_ida;Transporte_terrestre_ida;Dias_trabalhando;Custo;Valor_diaria;oras_trabaladas_por_dia;Custos_Alimentacao;Transporte_producao_pe;Transporte_producao_moto;Transporte_producao_carro;Transporte_producao_rabeta;Transporte_producao_voadeira;Transporte_producao_animal;Transporte_producao_frete;Gasto_combus_frete;Gasto_manutencao;Gasto_diaria;Insumos;Insumos_gastos;EPI_tipo;EPI_gastos;Gastos_total;Subsidio;Subsisio_quem
+1;2020;Elias Pinheiro Nunes;Lago Verde;Caut·rio;600;latas;1080;;;30;180;;1;15;;70;6;500;;1;;;;;;315;500;140;Facao, sacos,agulha,barbante,lima;400;n„o;;1390;sim;Pacto das Aguas
+2;2020;Daiane Alves de Oliveira;7 Voltas;Caut·rio;240;latas;72;;2;;480;1;1;30;;70;7;900;;1;;;1;;;300;500;1200;Facao, sacos,agulha,barbante,lima;350;n„o;;990;sim;Pacto das Aguas
+3;2020;Daiane Alves de Oliveira;IgarapÈ;Caut·rio;120;latas;720;2;;;20;;1;20;;70;7;600;;1;;;;;;110;300;280;Facao, sacos,agulha,barbante,lima;200;n„o;;850;sim;Pacto das Aguas
+4;2020;Raimndo Nonato do Nascimento;P„o de AÁucar;Caut·rio;360;latas;648;;;90;240;;1;30;;0;8;100;;1;;;;;;20;300;0;Facao, sacos,agulha,barbante,lima;500;n„o;;1320;sim;Pacto das Aguas
+5;2020;Maria do Carmo de Souza Nascimento;Rabo do Macaco;Caut·rio;240;latas;1368;1;;;70;1;1;40;;0;7;200;;;;;1;1;;80;1500;0;Facao, sacos,agulha,barbante,lima;700;n„o;;1205;sim;Pacto das Aguas
+6;2020;Francisco S. EliotÈrio dos Santos;Mutuca;Caut·rio;420;latas;24;;;10;20;;1;10;;70;6;500;;1;;;;;;300;700;1120;Facao, sacos,agulha,barbante,lima;400;n„o;;10;sim;Pacto das Aguas
+7;2020;Francisco S. EliotÈrio dos Santos;MaÁal;Caut·rio;180;latas;168;;6;;40;1;1;20;;70;6;800;;1;;;1;;;500;1000;280;facao, sacos,agulha,barbante,lima;300;n„o;;802;sim;Pacto das Aguas
+8;2020;Jonas Pereira dos Santos;L- 62;Caut·rio;290;latas;;;;90;0;;1;20;;0;5;500;;1;;;;;;500;1000;0;Facao, sacos,agulha,barbante,lima;300;n„o;;;sim;Pacto das Aguas
+9;2020;Francilene de Souza Costa;Ilha;Caut·rio;120;latas;2880;;;15;40;;1;8;;0;6;400;;1;;;;;;100;100;0;facao, sacos,agulha,barbante,lima;300;n„o;;1520;sim;Pacto das Aguas
+10;2020;Edelson Bras ;Pai Nosso;Caut·rio;330;LATAS;192;;;40;30;;1;25;;0;8;200;;1;;;;;;271;400;0;FAcao, sacos,agulha,barbante,lima;300;N√O;;1250;SIM;Pacto das Aguas
+11;2020;Rozilene de Soza Bezerra;7 Voltas;Caut·rio;210;latas;144;;1;;5;1;1;20;;0;4;500;;1;;;1;;;150;1000;0;Facao, sacos,agulha,barbante,lima;300;n„o;;1030;sim;Pacto das Aguas
+12;2020;Lucimar Lopes Pereira;Pula Pula;Caut·rio;16;latas;720;;2;;30;;1;3;;0;5;300;;1;;;;;;180;150;0;Facao, sacos,agulha,barbante,lima;100;n„o;;205;sim;Pacto das Aguas
+13;2020;Idalino Alves Nunes;VitÛria RÈgias;Caut·rio;330;latas;1920;;;5;60;;1;30;;70;6;800;;1;;;;;;150;100;1200;Facao, sacos,agulha,barbante,lima;300;n„o;;1090;sim;Pacto das Aguas
+14;2020;Fernanda de Souza Costa;Ilha;Caut·rio;390;latas;1320;;3;;4;;1;7;;100;7;1000;;1;1;;;;;500;1000;1500;Facao, sacos,agulha,barbante,lima;450;n„o;;2550;sim;Pacto das Aguas
+15;2021;Francisco Souza;Irm„os Gamas;Cazumb·;16;Latas;720;;5;;60;1;;3;;80;10;33;;;;1;;;;59;0;0;10 sacos;25;Botas;45;850;N„o;-
+16;2021;Daian;Irm„os Gamas;Cazumb·;16;Latas;72;;5;;35;1;;3;;70;10;33;;;;1;;;;52;0;0;-;0;-;0;805;N„o;-
+17;2021;Toin Nego;Irm„os Gamas;Cazumb·;16;Latas;192;;5;;4320;1;;3;;70;10;33;;;;1;;;;52;0;0;25 sacos;12;-;0;2700;N„o;-
+18;2021;Ronaleudo;Irm„os Gamas;Cazumb·;16;Latas;1296;;5;;5;1;;3;;80;10;32;1;;;1;;;;59;20;0;01 terÁado                    06 sacos;53;Botas;43;1012;N„o;-
+19;2021;Rail„;Irm„os Gamas;Cazumb·;16;Latas;108;;5;;4320;1;;3;;70;10;10;1;;;1;;;;0;0;0;-;0;-;0;2150;N„o;-
+20;2021;Sebasttiana;Irm„os Gamas;Cazumb·;16;Latas;156;;5;;3;1;;3;;60;10;100;1;;;1;;;;59;0;0;Sacos;12;Botas;70;200;N„o;-
+21;2021;Charles Afonso;Coletivo;Cazumb·;74;Latas;600;;;45;120;;1;6;;80;8;1166;1;;1;1;;;;56;0;0;01 terÁado                    50 sacos;100;Botas;45;640;N„o;-
+22;2021;Paulo Maia;Coletivo;Cazumb·;72;Latas;600;;;;60;;;;;25;;1136;;;;1;;;;15;0;25;50 sacos;50;-;0;242;N„o;-
+23;2021;Francisco Maia;Coletivo;Cazumb·;72;Latas;240;;;;60;;;;;;;1136;;;1;;;;;0;0;0;50 sacos ;50;-;0;435;N„o;-
+24;2021;Francisco Souza;Coletivo;Cazumb·;11;Latas;60;;;45;90;;1;6;;80;8;20;1;;1;;;;;0;0;0;01 terÁado;38;-;0;400;N„o;-
+25;2021;Daian;Coletivo;Cazumb·;11;Latas;4800;;;45;30;;1;6;;70;8;22;1;;1;;;;;0;0;0;05 sacos;25;Botas;48;510;N„o;-
+26;2021;Toin Nego;Coletivo;Cazumb·;11;Latas;60;;;45;60;;1;6;;70;8;27;1;;1;;;;;0;0;140;01 terÁado                   15 sacos;47;Botas;50;206.5;N„o;-
+27;2021;Rail„;Coletivo;Cazumb·;11;Latas;96;;;45;120;;1;6;;70;8;9;1;;1;1;;;;0;0;0;01 terÁado                         05 sacos ;45;Botas;35;352;N„o;-
+28;2021;Jair;Coletivo;Cazumb·;11;Latas;4692;;;45;20;;1;6;;70;8;12;1;;;;;;;0;0;0;04 sacos;16;-;0;538;N„o;-
+29;2021;Jilberto;Coletivo;Cazumb·;11;Latas;660;;;45;5;;1;6;;70;8;33;1;;1;;;;;0;0;0;05 sacos;10;Botas;35;281;N„o;-
+30;2021;Francisco Rajo;Coletivo;Cazumb·;11;Latas;1944;;;45;30;;1;6;;60;8;22;1;;1;;;;;0;0;0;01 terÁado                      03 sacos;54;-;0;3450;N„o;-
+31;2021;Chico do Valdemar;Coletivo;Cazumb·;11;Latas;4032;;;45;60;;1;6;;80;8;20;1;;;1;;;;6;0;0;01 terÁado + 01 lima        03 sacos;70;Botas;38;1485;N„o;-
+32;2021;Bruno ;Coletivo;Cazumb·;11;Latas;2880;;;45;30;;1;6;;60;8;20;1;;;1;;;;6;0;0;04 sacos ;20;Botas;42;1115;N„o;-
+33;2021;ZÈ Quaresma;Coletivo;Cazumb·;11;Latas;6000;;;45;15;;1;6;;100;8;25;1;;;1;;;;6;0;0;01 terÁado + 01 lima        03 sacos;73;-;0;1869.5;N„o;-
+34;2021;Alexandre (Leleco);Coletivo;Cazumb·;11;Latas;6540;;;45;45;;1;6;;70;8;35;1;;1;1;;;;10;0;0;03 sacos                     01 barbante;19;Botas;33;2028;N„o;-
+35;2021;ElÌnio;Coletivo;Cazumb·;11;Latas;2160;;;45;40;;1;6;;80;8;11;1;;1;1;;;;0;0;0;-;0;-;0;1430;N„o;-
+36;2021;Chico dos Anjos;Coletivo;Cazumb·;11;Latas;720;;;45;300;;1;6;;80;8;10;;;;1;;;;3;0;0;-;0;-;0;660;N„o;-
+37;2021;Afonso Araripe;Coletivo;Cazumb·;11;Latas;1140;;;45;300;;1;6;;65;8;33;1;;1;;;;;0;0;0;Sacos;10;-;0;764;N„o;-
+38;2021;Marizan Santos;Coletivo;Cazumb·;11;Latas;540;;;45;420;;1;6;;60;8;16;1;;1;;;;;0;0;60;-;0;-;0;462;N„o;-
+39;2021;Maurion Ribeiro;Coletivo;Cazumb·;11;Latas;;;;45;;;1;6;;60;8;13;1;;1;;;;;0;0;0;Sacos;20;-;0;;N„o;-
+40;2021;Odimar Moura;Coletivo;Cazumb·;11;Latas;;;;45;;;1;6;;80;8;28;1;;;;;;;0;0;0;Sacos;12;-;0;;N„o;-
+41;2021;AntÙnio Ediney;Coletivo;Cazumb·;11;Latas;;;;45;;;1;6;;80;8;28;1;;;;;;;0;0;0;Sacos e Barbante;16;-;0;;N„o;-
+42;2021;Sebasti„o Afonso;Zequinha;Cazumb·;60;Latas;;;;35;;;1;2;;60;8;33;1;;1;1;;1;;17;0;240;20 sacos;40;-;0;;N„o;-
+43;2021;Charlene;Zequinha;Cazumb·;42;Latas ;;;1;;;;1;7;;60;8;193;;;;1;;;;12;15;120;30 sacos ;60;Botas;36;;N„o;-
+44;2021;Istevo;Zequinha;Cazumb·;42;Latas;;;;20;;;1;4;;60;8;0;;;;1;;1;;0;0;120;12 sacos;24;-;0;;N„o;-
+45;2021;Tobias;Zequinha;Cazumb·;37;Latas;;;;20;;;1;4;;60;8;30;1;;1;;;1;;0;0;0;10 sacos;20;-;0;;N„o;-
+46;2021;Igor;Zequinha;Cazumb·;42;Latas;;;;20;;;1;4;;60;8;30;1;;1;;;1;;0;0;60;12 sacos;24;-;0;;N„o;-
+47;2021;Charliudo Afonso;Zequinha;Cazumb·;66;Latas;;;;20;;;1;3;;80;7;100;;;1;;;;;50;0;0;TerÁado, sacos e barbante;95;Botas;50;;N„o;-
+48;2021;Manoel Maia;Zirm„o 1;Cazumb·;50;Latas;;;1;;;;1;4;;100;10;120;;;;1;;1;;6;25;0;1 TerÁado, sacos e barbante;78;-;0;;N„o;-
+49;2021;Aldeci Maia;Zirm„o 1;Cazumb·;50;Latas;;;1;;;;1;4;;100;10;0;;;;1;;1;;6;25;400;TerÁado, sacos e barbante;78;-;0;;N„o;-
+50;2021;Pedro Maia;Zirm„o 1;Cazumb·;50;Latas;;;1;;;;1;4;;100;10;64;;;;1;;1;;0;0;100;14 sacos e barbante;37;-;0;;N„o;-
+51;2021;MauricÈlio;Zirm„o 1;Cazumb·;50;Latas;;;1;;;;1;4;;100;10;53;;;;1;;1;;0;0;0;1 terÁado e 14 sacos;54;-;0;;N„o;-
+52;2021;TeÌde Maia;Zirm„o 1;Cazumb·;50;Latas;;;1;;;;1;4;;100;10;52;;;;1;;1;;0;0;0;1 terÁado e 10 sacos;45;Botas;35;;N„o;-
+53;2021;Manoel Maia;Zirm„o 2;Cazumb·;38;Latas;;;;30;;;1;4;;100;10;120;;;;;;1;;0;25;0;Sacos;37;-;0;;N„o;-
+54;2021;Aldeci Maia;Zirm„o 2;Cazumb·;38;Latas;;;;30;;;1;4;;100;10;0;;;;;;1;;0;25;400;Sacos;37;-;0;;N„o;-
+55;2021;Pedro Maia;Zirm„o 2;Cazumb·;38;Latas;;;;30;;;1;4;;100;10;64;;;;;;1;;0;0;0;11 sacos e barbante;31;-;0;;N„o;-
+56;2021;MauricÈlio ;Zirm„o 2;Cazumb·;38;Latas;;;;30;;;1;4;;100;10;64;;;;;;1;;0;0;0;11 sacos;11;-;0;;N„o;-
+57;2021;TeÌde Maia;Zirm„o 2;Cazumb·;38;Latas;;;;30;;;1;4;;100;10;52;;;;;;1;;0;0;0;5 sacos;5;-;0;;N„o;-
+58;2021;Chiquinho (Madalena);Davi;Cazumb·;32;Latas;;;1;;;;1;9;;70;8;101;;;;1;;;;11;0;0;1 terÁado e 15 sacos;80;Botas e Capa de Chuva;64;;N„o;-
+59;2021;Karine Maia;Davi;Cazumb·;32;Latas;;;1;;;;1;9;;65;8;0;;;;1;;;;0;0;260;10 sacos;20;-;0;;N„o;-
+60;2021;Agecida Maia;Davi;Cazumb·;32;Latas;;;1;;;;1;9;;65;8;0;;;;1;;;;0;0;400;-;0;-;0;;N„o;-
+61;2021;Clicia Maia;Davi;Cazumb·;32;Latas;;;1;;;;1;3;;65;8;35;;;;1;;;;35;0;855;Sacos;58;-;0;;N„o;-
+62;2021;Reney Maia;Mariazinha;Cazumb·;43;Latas;;;;30;;;1;6;;100;9;75;;;;;;1;;0;0;100;9 sacos;9;-;0;;N„o;-
+63;2021;Marcelo Maia;Mariazinha;Cazumb·;43;Latas;;;;30;;;1;6;;100;9;75;;;;;;1;;0;0;0;9 sacos;9;-;0;;N„o;-
+64;2021;Maria Siqueira;Mariazinha;Cazumb·;86;Latas;;;;;;;1;-;;100;-;0;;;;;;1;;0;0;0;21 sacos;21;-;0;;N„o;-
+65;2021;Marizan Santos;Marizan ;Cazumb·;14;Latas;;;4;;;1;1;2;;60;5;50;1;;;1;;;;59;0;60;Sacos;10;-;0;;N„o;-
+66;2021;Marizalda Ribeiro;Marizan ;Cazumb·;13;Latas;;;4;;;1;1;2;;60;5;50;1;;;1;;;;59;0;60;TerÁado e sacos;50;Botas;50;;N„o;-
+67;2021;Maurion Ribeiro;Marizan ;Cazumb·;13;Latas;;;4;;;1;1;2;;60;5;50;1;;;1;;;;59;0;60;TerÁado e sacos;60;Botas;50;;N„o;-
+68;2021;Odimar Moura;Dimar;Cazumb·;15;Latas;;;6;;;1;;2;;80;10;85;;;;1;;;;148;55;0;TerÁado, sacos e barbante;56;Botas;50;;N„o;-
+69;2021;AntÙnio Ediney;Dimar;Cazumb·;15;Latas;;;6;;;1;;2;;80;10;30;;;;1;;;;0;0;0;TerÁado;40;Botas;60;;N„o;-
+70;2019;Nenzinho Maia;Mariazinha;Cazumb·;162;Latas;;;;30;;;1;9;;;;200;1;1;;;;;;;0;2950;40 Sacos;200;Nenhum;0;;N;
+71;2019;Manoel Maia;Zirm„o 1;Cazumb·;336;Latas;;;1;;;;1;6;;;;900;;;;;;1;;0;250;0;90 sacos, 01 rolo de barbante e fac„o;280;Bota 7 lÈguas;55;;N;
+72;2019;Manoel Maia;Zirm„o 2;Cazumb·;240;Latas;;;;30;;;1;4;;;;600;;;;;;1;;0;250;0;70 sacos;210;Bota 7 lÈguas;55;;N;
+73;2019;Charliudo Pinto;Zequinha;Cazumb·;500;Latas;;;;15;;;1;18;;;;350;;;;;;1;;;0;900;Sacos;300;6 Botas 7 lÈguas;270;;;
+74;2019;Charles Afonso;Coletivo;Cazumb·;545;Latas;;;;45;;;1;6;;;;1600;1;;1;;;;;;0;0;150 sacos;360;Nenhum;0;;N;
+75;2019;Davi Siqueira;Davi;Cazumb·;180;Latas;;;;40;;;1;20;;;;1000;1;;;1;;;;;0;840;40 sacos;140;Nenhum;0;;N;
+76;2019;Marizan;Marizan;Cazumb·;50;Latas;;;5;;;1;1;4;;;;150;;;;1;;;;100;0;280;20 sacos;60;2 Botas 7 lÈguas;70;;N;
+77;2019;Francisco Souza;Irm„os Gamas;Cazumb·;95;Latas;;;5;;;1;1;4;;;;200;;;;1;;;;;0;210;18 sacos ;54;Nenhum;0;;N;
+78;2019;Odimar Celestino;Dimar;Cazumb·;45;Latas;;;7;;;1;1;3;;;;100;;;;1;;;;;0;100;12 sacos e 1 fac„o;62;Nenhum;0;;N;
+79;2019;P„o de AÁucar;Raimundo Nonato Nascimento (CocÛ);Ouro Preto;15;Barricas;;;3;;;1;;;;;;400;;1;;1;;;;50;430;50;Saco, fac„o e barbante;400;Botas;60;;Sim;Parceiro - Pacto das ·guas
+80;2019;Rabo de Macaco;Raimundo Nonato Nascimento (CocÛ);Ouro Preto;6;Latas;;;8;;;1;;;;;;800;1;;;1;;;;40;0;0;;0;;150;;N„o;
+81;2019;Mutuca;Francisco (Galego);Ouro Preto;10;Barricas;;;;20;;;1;;;;;500;;1;;;;;;250;0;0;Saco e barbante;0;Botas e luvas;100;;Sim;Parceiro - Pacto das ·guas
+82;2019;MaÁal;Francisco (Galego);Ouro Preto;9;Barricas;;;4;;;1;1;;;;;600;;1;;1;;;;320;400;0;Fac„o e lima;0;EspecÌfico pessoa;0;;Sim;Parceiro - Pacto das ·guas
+83;2019;L-62;Jonas;Ouro Preto;114;Latas;;;;70;;;1;;;;;500;;1;;;;;;125;250;300;;0;Bota;30;;Sim;Projeto - Pacto das ·guas
+84;2019;Jatob·;Francilene de Souza ;Ouro Preto;2;Latas;;;;20;;;1;;;;;0;;1;;;;;;10;0;0;;0;;0;;Sim;Projeto - Pacto das ·guas
+85;2019;Pai nosso;Edelson Braz;Ouro Preto;14;latas;;;;40;;;1;;;;;300;;1;;;;;;155;195;0;Saco, fac„o e barbante;85;Botas e luvas;67;;N„o;
+86;2019;7 Voltas;Rosilene;Ouro Preto;;latas;;;;;;;;;;;;0;;;;;;;;0;0;0;;0;;0;;N„o;
+87;2019;Pula pula;Lucimar Lopes;Ouro Preto;60;sacas;;;;40;;;1;;;;;800;;1;;;;;;400;200;0;;0;Botas;120;;Sim;Projeto - Pacto das ·guas
+88;2019;Serra da ProvidÍncia;Stephanie;Ouro Preto;4;sacas;;;;30;;1;1;;;;;300;;;1;;1;;;500;350;100;;0;;0;;N„o;
+89;2019;Da Beira;Leo Marques;Ouro Preto;2;barricas;;;;5;;;1;;;;;300;;1;;;;;;100;300;150;Fac„o e sacos;100;Botas e luvas;80;;Sim;Projeto - Pacto das ·guas
+90;2019;IgarapÈ;Daiane Alves;Ouro Preto;15;sacas;;;;30;;;1;;;;;20;1;1;;;;;;75;50;0;;0;Bota e calÁas;60;;Sim;Projeto - Pacto das ·guas
+91;2019;7 Voltas;Daiane Alves;Ouro Preto;40;sacas;;;1;;;1;;;;;;400;;;;1;;;;160;50;480;;0;Bota e calÁas;0;;Sim;Projeto - Pacto das ·guas
+92;2019;Francisco Souza;do Francisco;Lago Cuni„;13;Latas ;;;;3;;;1;;;;;0;1;;;;;;;;;0;Saco e fac„o;200;;;;N„o;
+93;2019;Rusevalter;Itaubau;Lago Cuni„;50;Latas;;;2;;;1;;;;;;50;;;;1;;;;40;200;0;Saco e fac„o;200;Botas, Luvas e pilhas;150;;N„o;
+94;2019;Edson;Ara˙jo;Lago Cuni„;50;Latas;;;1;;;1;;;;;;50;;;;1;;;;32;0;0;Fac„o, saco e barbante;75;Botas, luvas e bonÈs;85;;N„o;
+95;2019;Levi;SocÛ;Lago Cuni„;20;Latas;;;1;;;1;;;;;;300;;;;1;;;;75;;0;Fac„o;50;Luvas;10;;Sim;Todas as alternativas
+96;2019;Levi;Prainha;Lago Cuni„;5;Latas;;;;90;;1;;;;;;300;;;;1;;;;100;;0;Fac„o;0;Luvas;0;;Sim;Todas as alternativas
+97;2019;Tito GonÁalves Neves;SÌtio;Lago Cuni„;100;Sacas;;;;20;;1;;;;;;;;;;1;;;;10;;0;Fac„o e barbante;200;Botas e luvas;300;;N„o;
+98;2019;Alessandra de Souza Santos;Acap˙;Lago Cuni„;5;latas;;;1;;;1;;;;;;150;1;;;1;;;;40;0;0;Sacos;1,5;Luvas;15;;N„o;
+99;2019;Levi Neves;SocÛ;Lago Cuni„;8;latas;;;2;;;1;1;;;;;150;1;1;;1;;;;50;;0;Sacos;2;Botas e luvas;150;;N„o;
+100;2019;Domingos Braga;AraÁ·;Lago Cuni„;391;latas;;;;20;;1;;;;;;150;;;;1;;;;100;0;0;Barbante, sacos e fac„o;218;Botas, luvas e repelente;70;;N„o;
+101;2019;Maria Vanete Leite;2 Irm„os;Lago Cuni„;55;latas;;;;5;;;1;;;;;0;1;;;;;;;0;0;0;Barbante, sacos e fac„o;141;Botas, luvas e repelente;140;;N„o;
+102;2018;Maria Batista de Souza (Dona Deise);Igarapezinho;Ouro Preto;110;latas;;;;4;;;1;;;;;800;1;;;;;;;400;1200;150;;;;;;Sim;E Pacto das ¡guas
+103;2018;Francisco da Rocha (XodÛ);XodÛ;Ouro Preto;60;latas;;;1;;;1;1;;;;;300;1;;;1;;;1;550;;;;;;;;N„o;
+104;2018;Paulo Silva da Costa;LamaÁal;Ouro Preto;6;latas;;;;35;;1;1;;;;;150;1;;1;1;;;;550;60;;;;Botina;45;;Sim;E Pacto das ¡guas
+105;2018;JosÈ Avilhaneda Amutari;Terra do Encanto;Ouro Preto;16;latas;;3;;;;1;1;;;;;1500;;;;1;;;1;600;300;;Fac„o, insumos, sacaria;300;;;;Sim;E Pacto das ¡guas
+106;2018;Manoel Albino;;Ouro Preto;108;latas;;;;5;;;1;;;;;532;1;;;;;;;0;0;0;Fac„o, lima, saco, barbante;350;Botina, calÁa;130;;N„o;
+107;2018;Francisco Avilhaneda Amutari;Bela Vista;Ouro Preto;9;latas;;3;;;;;1;;;;;1000;;;1;;;;;600;250;0;Fac„o, barbante, sacaria;300;;;;Sim;E Pacto das ¡guas
+108;2020;Francisco Avilhaneda;Bela Vista;Ouro Preto;12;barricas;;3;;;;1;1;30;;50;6;500;;;;1;;;1;975;300;0;2 teÁado, 1 lona, 6 limas, 1 machado e 20 sacos;350;bota, luva, 2 calÁa e 2 camisas;150;;sim;Projeto Pacto das ·guas com combustÌvel, teÁado e sacos.
+109;2020;CustÛdio Maciel do Nascimento;;Ouro Preto;45;latas;;;;;;1;1;6;;100;2;600;1;;1;1;;;;193;500;0;teÁado, 20 sacos.;0;n„o;0;;sim;Projeto Pacto das ·guas com 20 litros de combustÌvel, teÁado e sacos.
+110;2020;JosÈ Ribamar dos Santos;sem nome;Ouro Preto;30;barricas;;;;;;1;1;20;;50;8;400;;;1;;;;1;360;250;0;nada;0;nada;0;;sim;Projeto Pacto das ·guas : sacos e teÁados
+111;2020;JosÈ Avilhaneda Amutari;Sem Nome;Ouro Preto;14;barricas;;3;;;;1;1;15;;50;5;800;1;;1;1;;;;675;0;0;saco e barbante;100;nada, usou da safra passada;0;;nao;nada
+112;2020;Francisco da Silva Reis;sem nome;Ouro Preto;18;barricas;;;;40;;1;1;30;;100;12;300;;;;1;;;1;315;0;0;n„o;0;bota;50;;sim;Proketo Pacto das ·guas, sacos, barbante e fac„o
+113;2020;Leonardo Carneiro do Nascimento;Embrapa;Ouro Preto;3;barricas;;;;40;;;1;9;;0;8;400;;1;;;;;;68;90;0;saco, barbante, fac„o, corda;250;n„o;0;;n„o;n„o
+114;2020;Jucelino Avilhaneda Barroso;Igarape do bicho;Ouro Preto;15;barricas;;;36;;;1;1;15;;65;8;1000;;;;1;;;;585;0;0;25 sacos e barbante;150;nada;0;;sim;pacto . 12 sacos
+115;2020;Remerson Antero Perez;sem nome;Ouro Preto;8;barricas;;;1;;;;1;60;;50;9;;1;1;;;;;;72;420;0;2 terÁados e barbante;60;nada;0;;sim;projeto pacto das ·guas,  20 sacos, 2 teÁados,  2 lima, 2 agulha,  1 rolo de linha. 
+116;2020;Ailton Pereira de Freitas;sem nome;Ouro Preto;7;barricas;;;;90;;1;1;15;;0;7;;;;;1;;;1;300;0;0;nada;0;nada;0;;sim;projeto pacto das ·guas: 2 teÁados e 10 sacos
+117;2020;Elson Justino da Silva;sem nome;Ouro Preto;90;latas;;;;10;;;1;90;;60;8;800;1;;;1;;;1;270;0;0;nada;0;nada;0;;sim;projeto pacto das ·guas: 10 sacos, 2 teÁados,  1 barbante e uma agulha
+118;2020;Fernando da Silva Galv„o;sem nome;Ouro Preto;80;latas;;;;30;;;1;90;;50;8;1000;1;1;;;;;;90;250;0;2 teÁados, 20 sacos e 1 barbante. ;230;2 botas;100;;n„o;Francisco da 
+119;2020;Francisco da Silva Galv„o;sem nome;Ouro Preto;180;latas;;;1;;;;1;90;;50;8;700;1;1;;;;;;45;100;0;2 teÁados,  20 sacos, 1 barbante e 1 agulha;250;2 botas;120;;sim;projeto pacto das ·guas : 2 teÁados,  10 sacos, 1 barbante e 1 agulha
+120;2020;Valderice Reis do Nascimento;sem nome;Ouro Preto;33;barricas;;;;;;;1;30;;100;10;300;1;;;1;;;;180;0;0;nada nada;0;nada;0;;n„o;fornecido pelo atravessador
+121;2020;Deuzina Nogueira da  ConceiÁ„o;sem nome;Ouro Preto;100;latas;;;;10;;;1;60;;50;8;1200;;1;;;;;;90;400;0;10 sacos pequenos e 10 sacos grandes,  4 teÁados;100;4 botas;120;;n„o;
+122;2020;Francisco Gomes da Silva;sem nome;Ouro Preto;15;barricas;;;;10;;;1;60;;60;3;600;1;;;;;;;0;0;0;3 teÁados,  25 sacos e um barbante;301;nada;0;;nada;nada
+123;2020;Maria Batista de Souza;capoeirinha;Ouro Preto;8;latas;;;;10;;;1;45;;50;10;900;1;;;;;;;1500;2080;0;nada;0;nada;0;;sim;projeto pacto das ·guas: 3 teÁados,  15 sacos, 4 metros de lona 10 litros de gasolina
+124;2020;Jo„o Avilhaneda;Castanhal da Macumba;Ouro Preto;3;barricas;;;1;;;1;;13;;0;;500;1;1;;;;;;2500;0;0;Fac„o, lona, sacos e barbantes;200;Butina, luvas, calÁas e camisas;150;;N;
+125;2020;AntÙnio Dionizio dos Santos;Vale Verde;Ouro Preto;5;barricas;;;;30;;1;;15;;0;;600;1;;;1;;;;200;100;0;Fac„o, lona e sacos;250;Butina, luvas, calÁas e camisas;200;;S;Parceiro
+126;2021;Ciro;Ciro Gomes das Neves;Lago Cuni„;40;Latas ;;;;5;;;1;7;;;4;0;1;;;;;;;;;0;;0;;;;N„o;
+127;2021;Gareira;Mabel Ferreira ;Lago Cuni„;10;Latas;;;;100;;1;;2;;;5;20;;;;1;;;;15;0;0;;0;;0;;N„o;
+128;2021;HÈlio;TucunarÈ;Lago Cuni„;30;Latas;;;1;;;1;;30;;;4;;;;;1;;;;12;0;0;Fac„o e lima;50;;0;;N„o;
+129;2021;Antero;Antero ;Lago Cuni„;18;Latas;;;;5;;;1;30;;;5;0;1;;;;;;;;;0;;0;;0;;N„o;
+130;2021;Cl·udio;Cl·udio;Lago Cuni„;20;Latas;;;;10;;;1;4;;;3;0;1;;;;;;;0;0;0;;0;;0;;N„o;
+131;2021;Tito GonÁalves Neves;SÌtio;Lago Cuni„;80;Latas;;;;10;;;1;90;;;5;;;;;1;;;;10;;0;;0;;;;N„o;
+132;2021;Adenias;Acapulco;Lago Cuni„;6;latas;;;2;;;1;;2;;80;6;0;;;;1;;;;30;0;0;;0;;0;;N„o;
+133;2021;Comunidade;AraÁ·;Lago Cuni„;239;latas;;;;25;;1;1;90;;;4;0;1;;;1;;;;12;0;0;;0;;0;;N„o;
+134;2021;Maria Vanete Leite;2 Irm„os;Lago Cuni„;55;latas;;;;5;;;1;3;;;2;0;1;;;;;;;0;0;0;;0;;0;;N„o;
