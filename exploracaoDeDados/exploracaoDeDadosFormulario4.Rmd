@@ -36,6 +36,7 @@ Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no
 #leitura
 custo = read.csv(here("data", "formulario4Custo.csv"), sep = ";")
 
+custo = limpezaGeral(custo)
 
 AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ "
 RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy_"
