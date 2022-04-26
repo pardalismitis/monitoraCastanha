@@ -287,7 +287,7 @@ ggplot(subset(producaoTamanhoAgregada, !is.na(tamanho.x)), aes(x=factor(tamanho.
 -   Número de castanheiras x Classes de tamanho
 
 ```{r}
-write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
+#write.csv(producaoCastanheira, here("output", "producaoCastanheira.csv"))
 ```
 
 
