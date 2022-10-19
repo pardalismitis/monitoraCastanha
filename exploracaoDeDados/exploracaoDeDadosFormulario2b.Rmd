@@ -45,9 +45,43 @@ id =
            na.strings = c("","NA"))
 
 manejo <- manejo %>%
-  dplyr::full_join(id, by = "ID")
+  dplyr::full_join(., id, by = "ID")
+```
+
+
+```{r}
+dados <- manejo
+dados <- dados %>%
+  relocate(UC)%>% 
+```
+
+```{r}
+dados <- dados %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Cautario",
+                 "Reserva Extrativista Rio do Cautário"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Cazumba",
+                 "Reserva Extrativista do Cazumbá-Iracema"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Lago_Cuina",
+                 "Reserva Extrativista Lago do Cuniã"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "ROP",
+                 "Reserva Extrativista do Rio Ouro Preto"
+                 )
+  )
+
 
 ```
+
+
 
 \newpage
 
