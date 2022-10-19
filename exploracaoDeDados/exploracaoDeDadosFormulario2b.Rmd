@@ -52,7 +52,7 @@ manejo <- manejo %>%
 ```{r}
 dados <- manejo
 dados <- dados %>%
-  relocate(UC)%>% 
+  relocate(UC)#%>% 
 ```
 
 ```{r}
@@ -77,10 +77,15 @@ dados <- dados %>%
                  "Reserva Extrativista do Rio Ouro Preto"
                  )
   )
-
-
 ```
 
+```{r}
+dados <- dados %>%
+  dplyr::mutate(
+    Ano = substr(Cole_ini, nchar(Cole_ini)-4+1, nchar(Cole_ini))
+  ) %>%
+  relocate(Ano, .after = UC) 
+```
 
 
 \newpage
