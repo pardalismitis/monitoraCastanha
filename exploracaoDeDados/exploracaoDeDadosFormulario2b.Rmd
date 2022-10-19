@@ -84,7 +84,8 @@ dados <- dados %>%
   dplyr::mutate(
     Ano = substr(Cole_ini, nchar(Cole_ini)-4+1, nchar(Cole_ini))
   ) %>%
-  relocate(Ano, .after = UC) 
+  relocate(Ano, .after = UC) %>%
+  relocate(Nome_Castanhal, .after = Ano)
 ```
 
 
