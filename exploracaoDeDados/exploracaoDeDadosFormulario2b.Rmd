@@ -19,6 +19,7 @@ library(ggplot2)
 library(here)
 library(vctrs)
 library(dplyr)
+library(readr)
 ```
 
 # CASTANHA DA AMAZÔNIA - FORMULÁRIO 2A
@@ -42,7 +43,10 @@ manejo =
            )
 id =
   read.csv(here("data", "Id.csv"),
-           na.strings = c("","NA"))
+           na.strings = c("","NA")
+           )
+
+unique(id$Nome_Castanhal)
 
 manejo <- manejo %>%
   dplyr::full_join(., id, by = "ID")
@@ -85,7 +89,34 @@ dados <- dados %>%
     Ano = substr(Cole_ini, nchar(Cole_ini)-4+1, nchar(Cole_ini))
   ) %>%
   relocate(Ano, .after = UC) %>%
+  dplyr::mutate(
+    Nome_Castanhal = case_when(
+      Nome_Castanhal == "S’tio" ~ "Sitio",
+      Nome_Castanhal == "2 irm‹os" ~ "2_irmaos",
+      Nome_Castanhal == "Araœjo" ~ "Araujo",
+      
+      TRUE ~ Nome_Castanhal)
+    )
+    
+  
   relocate(Nome_Castanhal, .after = Ano)
+
+  dplyr::mutate(
+    UC = case_when(
+      UC == "Cazumbá" ~ "RESEX do Cazumbá Iracema",
+      UC == "Rebio Uatumã" ~ "REBIO Uatumã",
+      UC == "Resex Baixo Juruá" ~ "RESEX Baixo Juruá",
+      UC == "Resex Médio Juruá" ~ "RESEX Médio Juruá",
+      UC == "JAÚ" ~ "PARNA do Jaú",
+      UC == "UAT" ~ "REBIO Uatumã",
+      UC == "Resex do Rio Unini" ~ "RESEX do Rio Unini",
+      UC == "Resex  do Rio Unini" ~ "RESEX do Rio Unini",
+      UC == "Rebio Trombetas" ~"REBIO do Rio Trombetas",
+      UC == "Resex Médio Juruá e RDS Uacari" ~ "RESEX Médio Juruá e RDS Uacari",
+      TRUE ~ UC)
+    )
+  
+sort(unique(dados$Nome_Castanhal))
 ```
 
 
