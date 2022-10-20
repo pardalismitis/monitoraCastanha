@@ -9,15 +9,9 @@ output:
 
 ```{r packages, include=FALSE}
 rm(list = ls(all = TRUE))
-#install.packages("here")
-#install.packages("tidyverse")
-#install.packages("ggplot2")
-#install.packages("vctrs")
-#library(tidyverse)
-library(xlsx)
 library(ggplot2)
 library(here)
-library(vctrs)
+#library(vctrs)
 ```
 
 # CASTANHA DA AMAZÔNIA - FORMULÁRIO 2A
@@ -31,6 +25,8 @@ library(vctrs)
             -   Protocolo Básico
 
 Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitoraCastanha>
+
+### Leitura de dados
 
 ```{r dataReading, include=FALSE}
 totalColetado = 
@@ -110,13 +106,11 @@ defaultW <- getOption("warn")
 options(warn = -1)
 #options(warn = defaultW)
 
-ggplot(
-  totalColetado, aes(
-    #fill = UC,
-    y = N_pessoas,
-    x = UC)
-  )+
-  geom_bar(stat = "identity", fill = "blue")+
+ggplot(totalColetado, aes(y = N_pessoas, x = UC))+
+  geom_bar(
+    stat = "identity",
+    fill = "#006633"
+    )+
   
   labs(y = "NÚMERO DE PESSOAS", x = "RESEX")
 ```
@@ -126,13 +120,11 @@ ggplot(
 
 ```{r coletaPorUC}
 
-ggplot(
-  totalColetado, aes(
-    #fill = UC,
-    y = KG_TOTAL,
-    x = UC)
-  )+
-  geom_bar(stat = "identity", fill = "blue")+
+ggplot(totalColetado, aes(y = KG_TOTAL, x = UC))+
+  geom_bar(
+    stat = "identity",
+    fill = "#006633"
+    )+
   #facet_wrap(~UC) +
   labs(y = "QUANTIDADE DE CASTANHA (KG)", x = "RESEX")
 ```
