@@ -171,9 +171,24 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Como, .after = Sangrou
-  )
+  ) %>%
+  dplyr::mutate(
+    Epoca = substr(S_ini, nchar(S_ini)-7+1, nchar(S_ini)-5)
+  ) %>%
+  dplyr::relocate(
+    Epoca, .after = Como
+  ) %>%
+  dplyr::mutate(
+    Epoca = case_when(
+      Epoca == "01" ~ "janeiro",
+      Epoca == "02" ~ "fevereiro",
+      Epoca == "03" ~ "marco",
+      Epoca == "11" ~ "novembro",
+      Epoca == "12" ~ "dezembro",
+      TRUE ~ Epoca)
+    )
   
-sort(unique(dados$Como))
+sort(unique(dados$Epoca))
 
 sort(unique(dados$Representante))
 ```
