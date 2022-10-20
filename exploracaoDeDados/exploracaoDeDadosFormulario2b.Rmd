@@ -137,6 +137,7 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Limpeza_vege, .after = Cort_cipo
+
   ) %>%
   dplyr::mutate(
     Queima_vegetacao = tolower(Queima_vegetacao)
@@ -159,8 +160,6 @@ dados <- dados %>%
   dplyr::relocate(
     Plantou, .after = Quant
   )
-
-sort(unique(dados$Plantou))
   
 sort(unique(dados$Nome_Castanhal))
 
