@@ -94,12 +94,16 @@ dados <- dados %>%
       Nome_Castanhal == "S’tio" ~ "Sitio",
       Nome_Castanhal == "2 irm‹os" ~ "2_irmaos",
       Nome_Castanhal == "Araœjo" ~ "Araujo",
-      
+      Nome_Castanhal == "Soc—" ~ "Soco",
+      Nome_Castanhal == "Acapœ" ~ "Acapulco",
+      Nome_Castanhal == "Ara\u008d‡" ~ "Araca",
       TRUE ~ Nome_Castanhal)
-    )
-    
-  
+    ) %>%
   relocate(Nome_Castanhal, .after = Ano)
+  
+    
+sort(unique(dados$Nome_Castanhal))
+  
 
   dplyr::mutate(
     UC = case_when(
