@@ -186,9 +186,15 @@ dados <- dados %>%
       Epoca == "11" ~ "novembro",
       Epoca == "12" ~ "dezembro",
       TRUE ~ Epoca)
-    )
+    ) %>%
+  dplyr::mutate(
+    Cas_morreu = tolower(Cas_morreu)
+  ) %>%
+  dplyr::relocate(
+    Cas_morreu, .after = Epoca
+  ) 
   
-sort(unique(dados$Epoca))
+sort(unique(dados$Cas_morreu))
 
 sort(unique(dados$Representante))
 ```
