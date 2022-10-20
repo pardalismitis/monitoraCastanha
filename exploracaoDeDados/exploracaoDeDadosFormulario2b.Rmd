@@ -1,0 +1,244 @@
+---
+title: "Monitoramento Participativo da Biodiversidade"
+author: "Fernando Lima, D.Sc."
+output:
+  word_document: default
+  html_document:
+    df_print: paged 
+---
+
+```{r packages, include=FALSE}
+rm(list = ls(all = TRUE))
+#install.packages("here")
+install.packages("tidyverse")
+#install.packages("ggplot2")
+#install.packages("vctrs")
+library(tidyverse)
+library(xlsx)
+library(ggplot2)
+library(here)
+library(vctrs)
+library(dplyr)
+library(readr)
+```
+
+# CASTANHA DA AMAZÔNIA - FORMULÁRIO 2A
+
+-   Subprograma Terrestre
+
+    -   Componente Florestal
+
+        -   Alvo Complementar: Castanha da Amazônia
+
+            -   Protocolo Básico
+
+Os dados, scripts e informações aqui contidas estão disponíveis no GitHub no endereço: <https://github.com/pardalismitis/monitoraCastanha>
+
+```{r dataReading, include=FALSE}
+manejo = 
+  read.csv(here("data", "formulario2bManejo.csv"),
+           #sep = ";",
+           na.strings = c("", "NA"),
+           encoding = "UTF-8"
+           )
+id =
+  read.csv(here("data", "Id.csv"),
+           na.strings = c("","NA")
+           )
+
+unique(id$Nome_Castanhal)
+
+manejo <- manejo %>%
+  dplyr::full_join(., id, by = "ID")
+```
+
+
+```{r}
+dados <- manejo
+dados <- dados %>%
+  relocate(UC)#%>% 
+```
+
+```{r}
+dados <- dados %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Cautario",
+                 "Reserva Extrativista Rio do Cautário"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Cazumba",
+                 "Reserva Extrativista do Cazumbá-Iracema"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "Lago_Cuina",
+                 "Reserva Extrativista Lago do Cuniã"
+                 )
+  ) %>%
+  dplyr::mutate(
+    UC = replace(UC, UC == "ROP",
+                 "Reserva Extrativista do Rio Ouro Preto"
+                 )
+  )
+```
+
+```{r}
+dadosTemp <- dados
+dados <- dados %>%
+  dplyr::mutate(
+    Ano = substr(Cole_ini, nchar(Cole_ini)-4+1, nchar(Cole_ini))
+  ) %>%
+  relocate(Ano, .after = UC) %>%
+  dplyr::mutate(
+    Nome_Castanhal = case_when(
+      Nome_Castanhal == "S’tio" ~ "Sitio",
+      Nome_Castanhal == "2 irm‹os" ~ "2_irmaos",
+      Nome_Castanhal == "Araœjo" ~ "Araujo",
+      Nome_Castanhal == "Soc—" ~ "Soco",
+      Nome_Castanhal == "Acapœ" ~ "Acapulco",
+      Nome_Castanhal == "Ara\u008d‡" ~ "Araca",
+      TRUE ~ Nome_Castanhal)
+    ) %>%
+  dplyr::relocate(
+    Nome_Castanhal, .after = Ano
+    ) %>%
+  dplyr::mutate(
+    Representante = replace(Representante, Representante == "Tito Gon\u008dalves Neves",
+                 "Tito Goncalves Neves"
+                 )
+  ) %>%
+  dplyr::relocate(
+    Representante, .after = Nome_Castanhal
+    ) %>%
+  dplyr::mutate(
+    Mes = substr(Cole_ini, nchar(Cole_ini)-7+1, nchar(Cole_ini)-5)
+  ) %>%
+  dplyr::relocate(
+    Mes, .after = Representante
+    ) %>%
+  dplyr::mutate(
+    Mes = case_when(
+      Mes == "01" ~ "janeiro",
+      Mes == "02" ~ "fevereiro",
+      Mes == "03" ~ "marco",
+      Mes == "11" ~ "novembro",
+      Mes == "12" ~ "dezembro",
+      TRUE ~ Mes)
+    ) %>%
+  dplyr::mutate(
+    Cort_cipo = tolower(Cort_cipo)
+  ) %>%
+  dplyr::relocate(
+    Cort_cipo, .after = Mes
+  ) %>%
+  dplyr::mutate(
+    Limpeza_vege = tolower(Limpeza_vege)
+  ) %>%
+  dplyr::relocate(
+    Limpeza_vege, .after = Cort_cipo
+  )
+
+sort(unique(dados$Limpeza_vege))
+  
+sort(unique(dados$Nome_Castanhal))
+
+sort(unique(dados$Representante))
+```
+
+
+\newpage
+
+## LIMPEZA DE DADOS
+
+-   Limpeza de caracteres diacriticos e colocar tudo em minúsculas.
+
+-   Padronização dos nomes das UCs
+
+-   Conversão de campos numéricos
+
+-   Cálculo de peso total
+
+    | UNIDADE | LATA | KG  |
+    |---------|------|-----|
+    | LATA    | 1    | 12  |
+    | SACA    | 4    | 48  |
+    | BARRICA | 6    | 72  |
+
+    : Unidades de medidas para cálculo de produção
+
+```{r limpeza}
+AccChars <- "ŠŽšžŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöùúûüýÿ "
+RegChars <- "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy_"
+
+for(i in 1:ncol(totalColetado)) {       
+  totalColetado[ , i] <- chartr(AccChars, RegChars, totalColetado[ , i])
+  totalColetado[ , i] <- tolower(totalColetado[ , i])
+}
+
+
+totalColetado$UC <- gsub("cautario","Rio Cautário",
+                                gsub("lago_cunia","Lago do Cuniã",
+                                gsub("ouro_preto","Rio Ouro Preto",
+                                gsub("cazumba","Cazumbá-Iracema",
+                                     totalColetado$UC))))
+
+totalColetado$Q_castanha <- as.integer(totalColetado$Q_castanha)
+totalColetado$KG_TOTAL <- as.integer(totalColetado$KG_TOTAL)
+totalColetado$N_familias <- as.integer(totalColetado$N_familias)
+totalColetado$N_pessoas <- as.integer(totalColetado$N_pessoas)
+
+for(i in 1:nrow(totalColetado)){
+  if (totalColetado$Unidade[i] == "barricas") {
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*72
+  } else if (totalColetado$Unidade[i]== "latas"){
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*12
+  } else {
+    totalColetado$KG_TOTAL[i] <- totalColetado$Q_castanha[i]*48
+  }
+}
+```
+
+Exportação de dados
+
+```{r exportaForm2a}
+write.xlsx(totalColetado, here("output", "formulario2a.xlsx"), sheetName = "formulario2a", col.names = TRUE, row.names = TRUE, append = FALSE)
+```
+
+
+\newpage
+## DEMOGRAFIA NAS SAFRAS - FORMULÁRIO 2A
+
+### NÚMERO MÉDIO DE PESSOAS POR CASTANHAL EM CADA UNIDADE DE CONSERVAÇÃO
+
+```{r pessoasPorCastanhal}
+defaultW <- getOption("warn")
+options(warn = -1)
+#options(warn = defaultW)
+
+ggplot(
+  totalColetado, aes(
+    #fill = UC,
+    y = N_pessoas,
+    x = UC)
+  )+
+  geom_bar(stat = "identity", fill = "blue")+
+  
+  labs(y = "NÚMERO DE PESSOAS", x = "RESEX")
+```
+
+\newpage
+### TOTAL COLETADO EM CADA UNIDADE DE CONSERVAÇÃO
+
+```{r coletaPorUC}
+
+ggplot(
+  totalColetado, aes(
+    #fill = UC,
+    y = KG_TOTAL,
+    x = UC)
+  )+
+  geom_bar(stat = "identity", fill = "blue")+
+  #facet_wrap(~UC) +
+  labs(y = "QUANTIDADE DE CASTANHA (KG)", x = "RESEX")
+```
