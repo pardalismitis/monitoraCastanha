@@ -159,9 +159,12 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Plantou, .after = Quant
-  )
+  ) %>%
+  dplyr::relocate(
+    Quant.1, .after = Plantou
+  ) 
   
-sort(unique(dados$Nome_Castanhal))
+sort(unique(dados$Quant.1))
 
 sort(unique(dados$Representante))
 ```
