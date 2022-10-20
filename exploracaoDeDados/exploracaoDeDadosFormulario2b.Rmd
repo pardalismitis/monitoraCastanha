@@ -168,9 +168,12 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Sangrou, .after = Quant.1
-  ) 
+  ) %>%
+  dplyr::relocate(
+    Como, .after = Sangrou
+  )
   
-sort(unique(dados$Sangrou))
+sort(unique(dados$Como))
 
 sort(unique(dados$Representante))
 ```
