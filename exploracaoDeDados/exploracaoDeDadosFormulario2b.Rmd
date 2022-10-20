@@ -162,9 +162,15 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Quant.1, .after = Plantou
+  ) %>%
+  dplyr::mutate(
+    Sangrou = tolower(Sangrou)
+  ) %>%
+  dplyr::relocate(
+    Sangrou, .after = Quant.1
   ) 
   
-sort(unique(dados$Quant.1))
+sort(unique(dados$Sangrou))
 
 sort(unique(dados$Representante))
 ```
