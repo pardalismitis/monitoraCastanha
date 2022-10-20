@@ -84,6 +84,7 @@ dados <- dados %>%
 ```
 
 ```{r}
+dadosTemp <- dados
 dados <- dados %>%
   dplyr::mutate(
     Ano = substr(Cole_ini, nchar(Cole_ini)-4+1, nchar(Cole_ini))
@@ -99,28 +100,44 @@ dados <- dados %>%
       Nome_Castanhal == "Ara\u008d‡" ~ "Araca",
       TRUE ~ Nome_Castanhal)
     ) %>%
-  relocate(Nome_Castanhal, .after = Ano)
-  
-    
-sort(unique(dados$Nome_Castanhal))
-  
-
+  dplyr::relocate(
+    Nome_Castanhal, .after = Ano
+    ) %>%
   dplyr::mutate(
-    UC = case_when(
-      UC == "Cazumbá" ~ "RESEX do Cazumbá Iracema",
-      UC == "Rebio Uatumã" ~ "REBIO Uatumã",
-      UC == "Resex Baixo Juruá" ~ "RESEX Baixo Juruá",
-      UC == "Resex Médio Juruá" ~ "RESEX Médio Juruá",
-      UC == "JAÚ" ~ "PARNA do Jaú",
-      UC == "UAT" ~ "REBIO Uatumã",
-      UC == "Resex do Rio Unini" ~ "RESEX do Rio Unini",
-      UC == "Resex  do Rio Unini" ~ "RESEX do Rio Unini",
-      UC == "Rebio Trombetas" ~"REBIO do Rio Trombetas",
-      UC == "Resex Médio Juruá e RDS Uacari" ~ "RESEX Médio Juruá e RDS Uacari",
-      TRUE ~ UC)
-    )
+    Representante = replace(Representante, Representante == "Tito Gon\u008dalves Neves",
+                 "Tito Goncalves Neves"
+                 )
+  ) %>%
+  dplyr::relocate(
+    Representante, .after = Nome_Castanhal
+    ) %>%
+  dplyr::mutate(
+    Mes = substr(Cole_ini, nchar(Cole_ini)-7+1, nchar(Cole_ini)-5)
+  ) %>%
+  dplyr::relocate(
+    Mes, .after = Representante
+    ) %>%
+  dplyr::mutate(
+    Mes = case_when(
+      Mes == "01" ~ "janeiro",
+      Mes == "02" ~ "fevereiro",
+      Mes == "03" ~ "marco",
+      Mes == "11" ~ "novembro",
+      Mes == "12" ~ "dezembro",
+      TRUE ~ Mes)
+    ) %>%
+  dplyr::mutate(
+    Cort_cipo = tolower(Cort_cipo)
+  ) %>%
+  dplyr::relocate(
+    Cort_cipo, .after = Mes
+  )
+
+sort(unique(dados$Mes))
   
 sort(unique(dados$Nome_Castanhal))
+
+sort(unique(dados$Representante))
 ```
 
 
