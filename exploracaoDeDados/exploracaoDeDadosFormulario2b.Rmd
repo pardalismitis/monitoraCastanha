@@ -192,11 +192,18 @@ dados <- dados %>%
   ) %>%
   dplyr::relocate(
     Cas_morreu, .after = Epoca
-  ) 
-  
-sort(unique(dados$Cas_morreu))
-
-sort(unique(dados$Representante))
+  ) %>%
+  dplyr::relocate(
+    Cas_morreu_q, .after = Cas_morreu
+  ) %>%
+  dplyr::relocate(
+    Cas_morreu_c, .after = Cas_morreu_q
+  ) %>%
+  dplyr::mutate(
+    Cas_morreu_c = replace(Cas_morreu_c, Cas_morreu_c == "Morreuemp\u008e",
+                 "Morreu_em_pe"
+                 )
+  )  
 ```
 
 
